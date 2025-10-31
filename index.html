@@ -73,24 +73,26 @@
 
 
     /* -------------------------------------------
-    4. CABECERA (HEADER) Y MENÚ (FINAL)
+    4. CABECERA (HEADER) Y MENÚ (VERSIÓN ESTABLE)
 ------------------------------------------- */
 .main-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000; 
-    
-    /* FONDO ROJO Y SOMBRA */
-    background-color: var(--color-rojo-principal); 
-    padding: 10px 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); 
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+    
+    /* Restaurado a Gris Claro (Fondo Base) */
+    background-color: var(--color-fondo-base); 
+    
+    padding: 10px 20px;
+    
+    /* Restaurado: Borde inferior dorado */
+    box-shadow: none; 
     border-bottom: 3px solid var(--color-oro-acento); 
     
-    display: flex;
-    /* Alineación de la hamburguesa a la derecha en móvil */
-    justify-content: flex-end; 
-    align-items: center; 
-    flex-wrap: wrap; 
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+    flex-wrap: wrap; 
 }
 .logo-area { display: none; } 
 
@@ -114,7 +116,7 @@
         }
 
 /* -------------------------------------------
-    6. MENÚ MÓVIL Y ESTILOS BASE (SOLUCIÓN DE ALINEACIÓN)
+    6. MENÚ MÓVIL Y ESTILOS BASE (VERSIÓN ESTABLE)
 ------------------------------------------- */
 
 /* ESTILOS DEL BOTÓN DE HAMBURGUESA */
@@ -133,21 +135,22 @@
 .main-nav {
     display: none; /* Inicialmente oculto en móvil */
     width: 100%; /* Ocupa todo el ancho */
-    background-color: var(--color-rojo-principal); /* Fondo del menú es rojo */
+    /* Fondo Blanco para el menú móvil */
+    background-color: #fff; 
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* ESTRUCTURA DEL MENÚ (ABIERTO) */
 .main-nav.active {
-    display: block; /* Muestra el menú cuando tiene la clase 'active' */
-    position: absolute; /* Permite que flote sobre el contenido */
-    top: 60px; /* Lo desplaza por debajo de la barra roja superior */
+    display: block; 
+    position: absolute; 
+    top: 60px; /* Desplazado debajo de la barra */
     left: 0;
     z-index: 999;
 }
 
 .main-nav ul {
-    list-style: none; /* Quita los puntos de la lista */
+    list-style: none;
     padding: 0;
     margin: 0;
 }
@@ -158,10 +161,10 @@
     padding: 10px 15px;
     text-decoration: none;
     text-transform: uppercase;
-    /* Color de texto Dorado para contrastar con el fondo rojo */
-    color: var(--color-oro-acento); 
-    /* Línea divisoria más clara */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+    /* Restaurado a Rojo */
+    color: var(--color-rojo-principal); 
+    /* Línea divisoria gris claro */
+    border-bottom: 1px solid #eee; 
     transition: background-color 0.2s;
 }
 
@@ -170,105 +173,75 @@
 }
 
 .main-nav li a:hover {
-    /* Efecto al pasar el ratón: un rojo más oscuro para diferenciar */
-    background-color: #880000; 
-    color: var(--color-oro-acento);
+    /* Hover Dorado con texto Rojo */
+    background-color: var(--color-oro-acento); 
+    color: var(--color-rojo-principal);
 }
 
 
     /* -------------------------------------------
-    7. MEDIA QUERY (DISEÑO DE ESCRITORIO - PC) - VERSIÓN FINAL
+    7. MEDIA QUERY (DISEÑO DE ESCRITORIO - PC) - RESTAURADO A ESTABLE
 ------------------------------------------- */
 @media (min-width: 900px) { 
-                
-    .main-header {
-        /* Centramos el menú en la barra */
-        justify-content: center; 
-        padding: 0 40px; 
-    }
+                
+    .main-header {
+        justify-content: center; 
+        padding: 0 40px; 
+    }
 
-    .menu-toggle {
-        display: none;
-    }
+    .menu-toggle {
+        display: none;
+    }
 
-    .main-nav {
-        /* Muestra el menú en una fila y quita estilos de móvil */
-        display: flex !important; 
-        width: auto;
-        padding: 0;
-        position: static; 
-        background-color: transparent; 
-        box-shadow: none;
-    }
-    
-    .main-nav ul {
-        display: flex; 
-        align-items: center;
-        list-style: none; /* Asegura que no haya puntos */
-        margin: 0;
-        padding: 0;
-    }
+    .main-nav {
+        display: flex !important; 
+        width: auto;
+        padding: 0;
+        position: static; 
+        background-color: transparent; 
+        box-shadow: none;
+    }
+    
+    .main-nav ul {
+        display: flex; 
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
-    .main-nav li {
-        margin: 0; /* Quita márgenes verticales innecesarios */
-    }
+    .main-nav li {
+        margin: 0;
+    }
 
-    /* ESTILOS DE BOTÓN EN ESCRITORIO (Diseño Invertido) */
-    .main-nav li a {
-        border-bottom: none; 
-        padding: 10px 15px; 
-        margin: 10px 5px; 
-        border-radius: 5px; 
-        text-transform: uppercase;
-        font-weight: bold;
-        text-align: center;
-        text-decoration: none; /* Quita subrayado */
-        
-        /* ESTILOS INVERTIDOS: Fondo Transparente, Borde Dorado, Letra Dorada */
-        background-color: transparent; 
-        color: var(--color-oro-acento); /* Letra Dorada */
-        border: 2px solid var(--color-oro-acento); 
-        box-shadow: none; 
-        transition: all 0.3s ease;
-    }
-
-    /* ESTILOS DE HOVER EN ESCRITORIO (Se rellena de Dorado) */
-    .main-nav li a:hover {
-        background-color: var(--color-oro-acento); /* Fondo Dorado al pasar */
-        color: var(--color-rojo-principal); /* Letra en Rojo */
-        transform: translateY(-2px); 
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Nota: Se necesitan más estilos aquí abajo para secciones como Hero, etc., pero nos enfocamos en el menú */
-}
-
-            /* ESTILOS DE BOTÓN EN ESCRITORIO */
+    /* ESTILOS DE BOTÓN EN ESCRITORIO (Versión Estable: Botón Rojo) */
     .main-nav li a {
-        border-bottom: none; 
-        padding: 10px 15px; 
-        margin: 10px 5px; 
-        border-radius: 5px; 
+        border-bottom: none; 
+        padding: 10px 15px; 
+        margin: 10px 5px; 
+        border-radius: 5px; 
         text-transform: uppercase;
         font-weight: bold;
         text-align: center;
-        
-        /* CAMBIO: Fondo Transparente, Borde Dorado, Letra Dorada */
-        background-color: transparent; 
-        color: var(--color-oro-acento); 
-        border: 2px solid var(--color-oro-acento); 
-        box-shadow: none; /* Quitamos la sombra para que se vea plano */
+        text-decoration: none;
+        
+        /* Restaurado: Botón Rojo con Letra Dorada */
+        background-color: var(--color-rojo-principal); 
+        color: var(--color-oro-acento); 
+        border: 2px solid var(--color-oro-acento); 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
     }
 
-    /* ESTILOS DE HOVER EN ESCRITORIO */
+    /* ESTILOS DE HOVER EN ESCRITORIO (Versión Estable: Botón Dorado) */
     .main-nav li a:hover {
-        /* CAMBIO: Se rellena de DORADO al pasar el ratón */
-        background-color: var(--color-oro-acento); 
-        color: var(--color-rojo-principal); /* Letra en rojo */
-        transform: translateY(-2px); 
+        /* Restaurado: Botón Dorado con Letra Roja */
+        background-color: var(--color-oro-acento); 
+        color: var(--color-rojo-principal); 
+        transform: translateY(-2px); 
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     }
+}
 
 
         /* -------------------------------------------
@@ -821,6 +794,7 @@
     });
 </script>
 </html>
+
 
 
 
