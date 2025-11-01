@@ -192,7 +192,7 @@ body {
     background-image: url('hero-fondo.jpg'); 
     background-size: cover;
     background-position: center bottom; 
-    background-attachment: fixed; 
+    background-attachment: scroll; 
     background-repeat: no-repeat;
     
     /* Capa de Oscurecimiento */
@@ -596,18 +596,6 @@ body {
     font-size: 0.9em;
 }
 
-/* -------------------------------------------
-    14. MEDIA QUERY PARA MÓVILES (Fondo Fijo)
-------------------------------------------- */
-@media (max-width: 900px) { 
-    /* Esta regla se aplica a tabletas y móviles */
-    .hero-section {
-        /* Desactivamos el efecto Parallax para mejor rendimiento en móviles */
-        background-attachment: scroll !important; 
-        
-        /* Ajusta la posición para que se vea mejor */
-        background-position: center top !important;
-    }
-}
+
 
 
