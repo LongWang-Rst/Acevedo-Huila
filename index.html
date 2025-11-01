@@ -109,67 +109,41 @@
         }
 
 /* -------------------------------------------
-    6. MENÚ MÓVIL Y ESTILOS BASE (VERSIÓN ESTABLE)
-------------------------------------------- */
+            6. MENÚ MÓVIL Y ESTILOS BASE
+        ------------------------------------------- */
+        .main-nav {
+            display: none; 
+            width: 100%; 
+            transition: all 0.3s ease-in-out;
+            order: 3; 
+        }
 
-/* ESTILOS DEL BOTÓN DE HAMBURGUESA */
-.menu-toggle {
-    background: var(--color-rojo-principal); 
-    color: var(--color-oro-acento); 
-    border: 2px solid var(--color-oro-acento);
-    padding: 5px 10px;
-    font-size: 1.5em;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 5px; 
-}
+        .main-nav.active {
+            display: block;
+        }
 
-/* ESTRUCTURA BASE DEL MENÚ (CERRADO) */
-.main-nav {
-    display: none; /* Inicialmente oculto en móvil */
-    width: 100%; /* Ocupa todo el ancho */
-    /* Fondo Blanco para el menú móvil */
-    background-color: #fff; 
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
+        .main-nav ul {
+            list-style: none;
+            padding: 10px 0;
+        }
 
-/* ESTRUCTURA DEL MENÚ (ABIERTO) */
-.main-nav.active {
-    display: block; 
-    position: absolute; 
-    top: 60px; /* Desplazado debajo de la barra */
-    left: 0;
-    z-index: 999;
-}
+        .main-nav li a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: var(--color-rojo-principal);
+            border-bottom: 1px solid #eee; 
+            transition: background-color 0.2s;
+        }
 
-.main-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+        .main-nav li:last-child a {
+            border-bottom: none;
+        }
 
-/* ESTILOS DE LOS ENLACES DEL MENÚ */
-.main-nav li a {
-    display: block;
-    padding: 10px 15px;
-    text-decoration: none;
-    text-transform: uppercase;
-    /* Restaurado a Rojo */
-    color: var(--color-rojo-principal); 
-    /* Línea divisoria gris claro */
-    border-bottom: 1px solid #eee; 
-    transition: background-color 0.2s;
-}
-
-.main-nav li:last-child a {
-    border-bottom: none;
-}
-
-.main-nav li a:hover {
-    /* Hover Dorado con texto Rojo */
-    background-color: var(--color-oro-acento); 
-    color: var(--color-rojo-principal);
-}
+        .main-nav li a:hover {
+            background-color: var(--color-oro-acento);
+            color: var(--color-rojo-principal);
+        }
 
 
     /* -------------------------------------------
@@ -771,6 +745,7 @@
     });
 </script>
 </html>
+
 
 
 
