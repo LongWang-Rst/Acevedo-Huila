@@ -182,15 +182,15 @@ body {
     min-height: 50vh; 
     position: relative;
     
-    /* Configuración de Imagen de Fondo con la ruta correcta: hero-fondo.jpg */
+    /* Configuración de Imagen de Fondo (Asume que hero-fondo.jpg está en la misma carpeta que style.css) */
     background-color: #000;
-    background-image: url('assets/img/hero-fondo.jpg'); 
+    background-image: url('hero-fondo.jpg'); 
     background-size: cover;
     background-position: center bottom; 
     background-attachment: fixed; 
     background-repeat: no-repeat;
     
-    /* Capa de Oscurecimiento */
+    /* Capa de Oscurecimiento (Da el tono oscuro sobre los faroles) */
     box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5); 
 }
 
