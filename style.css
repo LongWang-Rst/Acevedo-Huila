@@ -191,7 +191,7 @@ body {
     background-color: #000;
     background-image: url('hero-fondo.jpg'); 
     background-size: cover;
-    background-position: center bottom; 
+    background-position: center center; 
     background-attachment: scroll; 
     background-repeat: no-repeat;
     
@@ -595,6 +595,7 @@ body {
     margin: 5px 0;
     font-size: 0.9em;
 }
+
 
 
 
