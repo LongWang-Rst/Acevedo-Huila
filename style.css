@@ -2,12 +2,12 @@
     1. DEFINICIÓN DE COLORES
 ------------------------------------------- */
 :root {
-    --color-rojo-principal: #AA0000; /* Rojo Chino Intenso */
-    --color-oro-acento: #FFD700;    /* Oro Brillante */
-    --color-fondo: #f5f5f5;         /* Fondo Gris Claro */
-    --color-fondo-base: #eeeeee;    /* Fondo Base Gris */
-    --color-header: #fff;           /* Blanco para Header/Contenido */
-    --color-negro-opaco: #222222;   /* Texto Principal */
+    --color-rojo-principal: #AA0000;
+    --color-oro-acento: #FFD700; 
+    --color-fondo: #f5f5f5; 
+    --color-fondo-base: #eeeeee; 
+    --color-header: #fff; 
+    --color-negro-opaco: #222222; 
 }
 
 /* -------------------------------------------
@@ -64,24 +64,25 @@ body {
     }
 }
 
-
 /* -------------------------------------------
-    4. CABECERA (HEADER) Y MENÚ
+    4. CABECERA (HEADER) Y MENÚ (Pegajoso)
 ------------------------------------------- */
 .main-header {
     position: sticky;
     top: 0;
     z-index: 1000; 
-    background-color: var(--color-fondo-base);
+    background-color: var(--color-fondo-base); 
     padding: 10px 20px;
     border-bottom: 3px solid var(--color-oro-acento); 
-    
     display: flex;
     justify-content: flex-end; 
     align-items: center; 
-    height: 60px; 
+    height: 60px;
 }
 
+/* -------------------------------------------
+    5. BOTÓN HAMBURGUESA (Móvil)
+------------------------------------------- */
 .menu-toggle {
     display: block; 
     background: var(--color-rojo-principal);
@@ -95,6 +96,9 @@ body {
     transition: background-color 0.3s;
 }
 
+/* -------------------------------------------
+    6. MENÚ MÓVIL Y ESTILOS BASE
+------------------------------------------- */
 .main-nav {
     display: none; 
     width: 100%; 
@@ -128,7 +132,9 @@ body {
     text-align: center; 
 }
 
-/* MEDIA QUERY (ESCRITORIO) */
+/* -------------------------------------------
+    7. MEDIA QUERY (DISEÑO DE ESCRITORIO - PC)
+------------------------------------------- */
 @media (min-width: 900px) { 
     .main-header {
         justify-content: center; 
@@ -173,7 +179,7 @@ body {
 
 
 /* -------------------------------------------
-    5. SECCIÓN HERO (FONDO DE FAROLES CORREGIDO)
+    8. SECCIÓN HERO (AMBIENTACIÓN CHINA)
 ------------------------------------------- */
 .hero-section {
     padding: 80px 20px;
@@ -182,7 +188,6 @@ body {
     min-height: 50vh; 
     position: relative;
     
-    /* RUTA DE IMAGEN CORREGIDA DEFINITIVAMENTE */
     background-color: #000;
     background-image: url('hero-fondo.jpg'); 
     background-size: cover;
@@ -190,10 +195,11 @@ body {
     background-attachment: fixed; 
     background-repeat: no-repeat;
     
-    /* Capa de Oscurecimiento (Da el tono oscuro sobre los faroles) */
+    /* Capa de Oscurecimiento */
     box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5); 
 }
 
+/* TÍTULOS DENTRO DEL HERO */
 .titulo-bienvenida {
     color: var(--color-oro-acento);
     font-size: clamp(2.5rem, 5vw, 4rem);
@@ -210,15 +216,15 @@ body {
     margin-right: auto;
 }
 
-/* Corregido: Esto es lo que soluciona la superposición de los botones en la sección Hero */
+/* CONTENEDOR DE BOTONES (SOLUCION .cta-container) */
 .cta-container {
     display: flex;
     gap: 15px; 
     justify-content: center;
     flex-wrap: wrap; 
-    margin-top: 40px; 
 }
 
+/* ESTILOS DE BOTÓN PRINCIPAL (CTA) */
 .cta-button {
     text-decoration: none;
     padding: 15px 30px;
@@ -238,16 +244,30 @@ body {
     gap: 10px;
 }
 
+.cta-button:hover {
+    background-color: #880000;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Botón Secundario */
 .secondary-cta {
     background-color: var(--color-oro-acento); 
     color: var(--color-rojo-principal);
     border: 2px solid var(--color-rojo-principal);
 }
 
+.secondary-cta:hover {
+    background-color: #EBD341;
+    color: var(--color-rojo-principal);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
 
 /* -------------------------------------------
-    6. ESTILOS PARA SECCIONES DE CONTENIDO
+    9. ESTILOS PARA SECCIONES DE CONTENIDO
 ------------------------------------------- */
+
 .content-section {
     max-width: 1200px;
     margin: 40px auto;
@@ -261,7 +281,7 @@ body {
 
 .content-section h2 {
     color: var(--color-rojo-principal);
-    font-size: clamp(1.8em, 4vw, 2.2em); 
+    font-size: clamp(1.8em, 4vw, 2.2em);
     margin-bottom: 30px;
     border-bottom: 2px solid var(--color-oro-acento);
     display: inline-block;
@@ -278,9 +298,7 @@ body {
     margin-right: auto;
 }
 
-/* -------------------------------------------
-    7. SECCIÓN DEL CHEF (SOBRE NOSOTROS)
-------------------------------------------- */
+/* Estilos de la Sección del Chef */
 .chef-section-container {
     display: flex;
     flex-wrap: wrap; 
@@ -322,6 +340,7 @@ body {
     }
 }
 
+/* Diseño de Rejilla para las características */
 .feature-grid {
     display: flex;
     justify-content: space-around;
@@ -349,9 +368,20 @@ body {
     background-color: var(--color-rojo-principal);
 }
 
+.feature-item h3 {
+    color: var(--color-rojo-principal);
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: #666;
+}
+
+
 /* -------------------------------------------
-    8. CARTA COMPLETA
+    10. ESTILOS DE LA CARTA COMPLETA VISIBLE
 ------------------------------------------- */
+
 .carta-images-full-container {
     display: flex;
     flex-direction: column; 
@@ -368,6 +398,11 @@ body {
     border: 5px solid var(--color-oro-acento);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.full-carta-image:hover {
+    transform: scale(1.02);
 }
 
 @media (min-width: 1024px) {
@@ -382,10 +417,20 @@ body {
     }
 }
 
+.view-full-menu-btn {
+    margin: 20px auto 30px auto;
+    display: block;
+    max-width: 350px;
+}
 
 /* -------------------------------------------
-    9. GALERÍA DE PLATOS
+    11. ESTILOS DE GALERÍA Y TESTIMONIOS (Ajustes de espacio)
 ------------------------------------------- */
+
+.gallery-section {
+    padding-bottom: 60px;
+}
+
 .food-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
@@ -417,19 +462,6 @@ body {
     transition: transform 0.5s ease; 
 }
 
-.gallery-item:hover .gallery-image {
-    transform: scale(1.1);
-}
-
-.gallery-item:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    border-color: var(--color-oro-acento); 
-}
-
-
-/* -------------------------------------------
-    10. TESTIMONIOS
-------------------------------------------- */
 .testimonial-grid {
     display: flex;
     flex-wrap: wrap;
@@ -461,7 +493,7 @@ body {
 
 
 /* -------------------------------------------
-    11. CONTACTO
+    12. ESTILOS DE CONTACTO (Alineación corregida)
 ------------------------------------------- */
 .contact-section {
     background-color: var(--color-fondo-base); 
@@ -549,7 +581,7 @@ body {
 
 
 /* -------------------------------------------
-    12. ESTILOS DEL PIE DE PÁGINA (FOOTER)
+    13. ESTILOS DEL PIE DE PÁGINA (FOOTER)
 ------------------------------------------- */
 .main-footer {
     background-color: var(--color-rojo-principal);
@@ -559,3 +591,7 @@ body {
     border-top: 5px solid var(--color-oro-acento);
 }
 
+.footer-content p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
