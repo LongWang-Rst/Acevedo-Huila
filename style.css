@@ -31,7 +31,7 @@ body {
 .logo-titular-area {
     width: 100%;
     text-align: center;
-    padding: 40px 0 20px 0;
+    padding: 20px 0 10px 0; 
     background-color: var(--color-rojo-principal); 
     border-bottom: 5px solid var(--color-oro-acento);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -40,7 +40,7 @@ body {
 .logo-titular-area .logo-wrapper {
     display: inline-block;
     margin: 0 auto;
-    padding: 10px; 
+    padding: 5px; 
     background: none; 
     border: 3px solid var(--color-oro-acento); 
     border-radius: 8px; 
@@ -50,10 +50,15 @@ body {
 .logo-titular {
     height: auto; 
     display: block; 
-    width: 220px; 
+    width: 200px; 
 }
 
 @media (min-width: 768px) {
+    .logo-titular {
+        width: 350px; 
+    }
+}
+@media (min-width: 1024px) {
     .logo-titular {
         width: 450px; 
     }
@@ -61,7 +66,7 @@ body {
 
 
 /* -------------------------------------------
-    4. CABECERA (HEADER) Y MENÚ (Móvil)
+    4. CABECERA (HEADER) Y MENÚ
 ------------------------------------------- */
 .main-header {
     position: sticky;
@@ -72,42 +77,35 @@ body {
     border-bottom: 3px solid var(--color-oro-acento); 
     
     display: flex;
-    justify-content: flex-end; /* Alinea el botón a la derecha */
+    justify-content: flex-end; 
     align-items: center; 
-    flex-wrap: wrap; 
+    height: 60px; 
 }
 
-/* 4.1 BOTÓN HAMBURGUESA */
 .menu-toggle {
+    display: block; 
     background: var(--color-rojo-principal);
     color: var(--color-oro-acento);
     border: 2px solid var(--color-oro-acento);
-    padding: 5px 10px;
-    font-size: 1.5em;
+    padding: 8px 12px;
+    font-size: 1.3em;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 5px; 
+    margin-left: auto; 
     transition: background-color 0.3s;
 }
 
-.menu-toggle:hover {
-    background-color: #880000;
-}
-
-/* 4.2 ESTRUCTURA BASE DEL MENÚ (CERRADO) */
 .main-nav {
-    display: none; /* Inicialmente oculto en móvil */
+    display: none; 
     width: 100%; 
     background-color: var(--color-header); 
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    /* Posicionamiento para que cubra la pantalla debajo del header */
     position: absolute; 
-    top: 60px; /* Ajustar si el header tiene una altura diferente */
+    top: 60px; 
     left: 0;
     z-index: 999;
 }
 
-/* 4.3 ESTRUCTURA DEL MENÚ (ABIERTO) */
 .main-nav.active {
     display: block; 
 }
@@ -118,7 +116,6 @@ body {
     margin: 0;
 }
 
-/* 4.4 ESTILOS DE LOS ENLACES DEL MENÚ (MÓVIL) */
 .main-nav li a {
     display: block;
     padding: 15px 20px;
@@ -128,70 +125,44 @@ body {
     color: var(--color-rojo-principal); 
     border-bottom: 1px solid var(--color-fondo-base); 
     transition: background-color 0.2s;
+    text-align: center; 
 }
 
-.main-nav li:last-child a {
-    border-bottom: none;
-}
-
-.main-nav li a:hover {
-    background-color: var(--color-oro-acento); 
-    color: var(--color-negro-opaco);
-}
-
-
-/* -------------------------------------------
-    5. MEDIA QUERY (DISEÑO DE ESCRITORIO - PC)
-------------------------------------------- */
+/* MEDIA QUERY (ESCRITORIO) */
 @media (min-width: 900px) { 
-    
     .main-header {
-        justify-content: center; /* Centra el menú en PC */
+        justify-content: center; 
         padding: 0 40px; 
     }
-
     .menu-toggle {
-        display: none;
+        display: none; 
     }
-
     .main-nav {
-        display: flex !important; /* Muestra el menú horizontalmente en PC */
+        display: flex !important; 
         width: auto;
         padding: 0;
         position: static; 
         background-color: transparent; 
         box-shadow: none;
     }
-    
     .main-nav ul {
-        display: flex; /* Convierte los ítems a horizontal */
+        display: flex; 
         align-items: center;
-        list-style: none;
         margin: 0;
         padding: 0;
     }
-
-    .main-nav li {
-        margin: 0;
-    }
-
-    /* ESTILOS DE BOTÓN EN ESCRITORIO */
     .main-nav li a {
         border-bottom: none; 
         padding: 10px 15px; 
         margin: 10px 5px; 
         border-radius: 5px; 
         font-weight: bold;
-        text-align: center;
-        
         background-color: var(--color-rojo-principal); 
         color: var(--color-oro-acento); 
         border: 2px solid var(--color-oro-acento); 
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
     }
-
-    /* ESTILOS DE HOVER EN ESCRITORIO */
     .main-nav li a:hover {
         background-color: var(--color-oro-acento); 
         color: var(--color-rojo-principal); 
@@ -202,7 +173,7 @@ body {
 
 
 /* -------------------------------------------
-    6. SECCIÓN HERO (AMBIENTACIÓN CHINA)
+    5. SECCIÓN HERO (FONDO DE FAROLES CORREGIDO)
 ------------------------------------------- */
 .hero-section {
     padding: 80px 20px;
@@ -211,19 +182,18 @@ body {
     min-height: 50vh; 
     position: relative;
     
-    /* Configuración de Imagen de Fondo */
+    /* Configuración de Imagen de Fondo con la ruta correcta: hero-fondo.jpg */
     background-color: #000;
-    /* REEMPLAZA 'hero-fondo.jpg' con tu ruta de imagen real */
     background-image: url('assets/img/hero-fondo.jpg'); 
     background-size: cover;
-    background-position: center;
+    background-position: center bottom; 
+    background-attachment: fixed; 
     background-repeat: no-repeat;
     
-    /* Capa de Oscurecimiento (Overlay) */
-    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7); 
+    /* Capa de Oscurecimiento */
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5); 
 }
 
-/* TÍTULOS DENTRO DEL HERO */
 .titulo-bienvenida {
     color: var(--color-oro-acento);
     font-size: clamp(2.5rem, 5vw, 4rem);
@@ -240,7 +210,6 @@ body {
     margin-right: auto;
 }
 
-/* CONTENEDOR DE BOTONES (CTA) */
 .cta-container {
     display: flex;
     gap: 15px; 
@@ -248,7 +217,6 @@ body {
     flex-wrap: wrap; 
 }
 
-/* ESTILOS DE BOTÓN PRINCIPAL (CTA) */
 .cta-button {
     text-decoration: none;
     padding: 15px 30px;
@@ -263,35 +231,25 @@ body {
     color: var(--color-oro-acento);
     border: 2px solid var(--color-oro-acento);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.cta-button:hover {
-    background-color: #880000;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-}
-
-/* Botón Secundario */
 .secondary-cta {
     background-color: var(--color-oro-acento); 
     color: var(--color-rojo-principal);
     border: 2px solid var(--color-rojo-principal);
 }
 
-.secondary-cta:hover {
-    background-color: #EBD341;
-    color: var(--color-rojo-principal);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-}
 
 /* -------------------------------------------
-    7. ESTILOS PARA SECCIONES DE CONTENIDO
+    6. ESTILOS PARA SECCIONES DE CONTENIDO
 ------------------------------------------- */
 .content-section {
     max-width: 1200px;
     margin: 40px auto;
-    padding: 40px;
+    padding: 40px 20px; 
     background-color: var(--color-header);
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -301,7 +259,7 @@ body {
 
 .content-section h2 {
     color: var(--color-rojo-principal);
-    font-size: 2.2em;
+    font-size: clamp(1.8em, 4vw, 2.2em); 
     margin-bottom: 30px;
     border-bottom: 2px solid var(--color-oro-acento);
     display: inline-block;
@@ -319,10 +277,8 @@ body {
 }
 
 /* -------------------------------------------
-    8. SECCIÓN DEL CHEF (SOBRE NOSOTROS)
+    7. SECCIÓN DEL CHEF (SOBRE NOSOTROS)
 ------------------------------------------- */
-
-/* Contenedor principal para la foto y la info */
 .chef-section-container {
     display: flex;
     flex-wrap: wrap; 
@@ -331,18 +287,13 @@ body {
     gap: 40px;
     padding: 30px 0; 
     max-width: 1000px;
-    margin: 0 auto 50px auto; /* Añade margen inferior */
+    margin: 0 auto 50px auto; 
     text-align: center;
 }
 
-.chef-photo-box {
-    flex-shrink: 0; /* Evita que la foto se encoja */
-}
-
-/* Estilos de la foto para hacerla más destacada */
 .chef-photo {
     width: 100%;
-    max-width: 350px; 
+    max-width: 300px; 
     height: auto;
     border-radius: 50%; 
     border: 7px solid var(--color-rojo-principal); 
@@ -352,36 +303,23 @@ body {
 }
 
 .chef-info {
-    flex: 1; /* Permite que el texto ocupe el espacio restante */
+    flex: 1; 
     text-align: left;
     max-width: 500px;
 }
 
-.chef-info h3 {
-    color: var(--color-rojo-principal);
-    font-size: 1.8em;
-    margin-bottom: 15px;
-}
-
-.chef-info p {
-    color: var(--color-negro-opaco);
-    line-height: 1.7;
-}
-
-/* Responsividad para el Chef */
 @media (max-width: 900px) {
     .chef-section-container {
-        flex-direction: column; /* Apila el contenido y la foto */
+        flex-direction: column; 
     }
     .chef-photo {
         margin-bottom: 20px;
     }
     .chef-info {
-        text-align: center; /* Centra el texto del chef en móvil */
+        text-align: center; 
     }
 }
 
-/* Diseño de Rejilla para las características */
 .feature-grid {
     display: flex;
     justify-content: space-around;
@@ -391,7 +329,7 @@ body {
 }
 
 .feature-item {
-    flex: 1 1 280px; 
+    flex: 1 1 250px; 
     padding: 20px;
     border-radius: 8px;
     text-align: center;
@@ -409,19 +347,9 @@ body {
     background-color: var(--color-rojo-principal);
 }
 
-.feature-item h3 {
-    color: var(--color-rojo-principal);
-    margin-bottom: 10px;
-}
-
-.feature-item p {
-    color: #666;
-}
-
 /* -------------------------------------------
-    9. CARTA COMPLETA
+    8. CARTA COMPLETA
 ------------------------------------------- */
-
 .carta-images-full-container {
     display: flex;
     flex-direction: column; 
@@ -438,11 +366,6 @@ body {
     border: 5px solid var(--color-oro-acento);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-}
-
-.full-carta-image:hover {
-    transform: scale(1.02);
 }
 
 @media (min-width: 1024px) {
@@ -457,32 +380,20 @@ body {
     }
 }
 
-.view-full-menu-btn {
-    margin: 20px auto 30px auto;
-    display: block;
-    max-width: 350px;
-}
 
 /* -------------------------------------------
-    10. GALERÍA DE PLATOS
+    9. GALERÍA DE PLATOS
 ------------------------------------------- */
-
-.gallery-section {
-    padding-bottom: 60px;
-}
-
 .food-gallery {
     display: grid;
-    /* Móvil: Empieza con una cuadrícula responsiva de mínimo 150px */
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
     gap: 15px;
     margin-top: 40px;
     margin-bottom: 40px;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
     .food-gallery {
-        /* PC: 5 columnas fijas */
         grid-template-columns: repeat(5, 1fr);
     }
 }
@@ -498,16 +409,10 @@ body {
 
 .gallery-image {
     width: 100%;
-    /* Altura fija para que la cuadrícula sea uniforme (idealmente) */
-    height: 150px; 
+    aspect-ratio: 1 / 1; 
     display: block;
     object-fit: cover; 
     transition: transform 0.5s ease; 
-}
-@media (min-width: 900px) {
-    .gallery-image {
-        height: 200px; /* Un poco más alto en PC */
-    }
 }
 
 .gallery-item:hover .gallery-image {
@@ -519,14 +424,9 @@ body {
     border-color: var(--color-oro-acento); 
 }
 
-.view-all-button {
-    margin-top: 20px;
-    display: inline-block;
-    padding: 15px 35px;
-}
 
 /* -------------------------------------------
-    11. TESTIMONIOS
+    10. TESTIMONIOS
 ------------------------------------------- */
 .testimonial-grid {
     display: flex;
@@ -557,44 +457,27 @@ body {
     line-height: 0.5;
 }
 
-.testimonial-text {
-    font-style: italic;
-    color: #444;
-    margin: 10px 0 15px 0;
-}
-
-.testimonial-author {
-    font-weight: bold;
-    color: var(--color-rojo-principal);
-    text-align: right;
-    margin-top: 15px;
-    border-top: 1px dashed #ccc;
-    padding-top: 5px;
-}
-
 
 /* -------------------------------------------
-    12. ESTILOS DE CONTACTO (CRUCIALMENTE CORREGIDO)
+    11. CONTACTO
 ------------------------------------------- */
 .contact-section {
     background-color: var(--color-fondo-base); 
 }
 
-/* Contenedor principal que divide 2/3 y 1/3 en PC */
 .contact-info-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* 2/3 para info, 1/3 para horario en PC */
+    grid-template-columns: 2fr 1fr; 
     gap: 30px;
     margin-top: 40px;
     text-align: center;
     align-items: start; 
 }
 
-/* Contenedor de los 3 elementos cortos (WhatsApp y Ubicación) */
 .contact-short-info {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas uniformes en PC */
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
 }
 
 .contact-item {
@@ -603,15 +486,10 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    height: 100%; /* Asegura que todos los ítems cortos tengan la misma altura */
+    height: 100%; 
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.contact-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .contact-icon {
@@ -620,35 +498,12 @@ body {
     margin-bottom: 15px;
 }
 
-.contact-item h3 {
-    font-size: 1.3em;
-    margin-bottom: 10px;
-    color: var(--color-negro-opaco);
-}
-
-.contact-item p {
-    font-size: 1.1em;
-    font-weight: bold;
-    margin: 0;
-}
-
 .whatsapp-item a {
     color: var(--color-rojo-principal); 
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.whatsapp-item a:hover {
-    color: var(--color-oro-acento);
-}
-
-.contact-item small {
-    display: block;
-    color: #888;
-    margin-top: 5px;
-}
-
-/* Estilos específicos para el Horario */
 .hours-item p {
     font-weight: normal;
     font-size: 1em;
@@ -658,16 +513,11 @@ body {
     color: #444;
 }
 
-.hours-item p:last-of-type {
-    border-bottom: none;
-}
-
 .hours-item .closed-day {
     color: var(--color-rojo-principal);
     font-weight: bold;
 }
 
-/* Contenedor del Mapa */
 .map-container {
     margin-top: 40px;
     width: 100%;
@@ -677,26 +527,27 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.map-container iframe {
-    width: 100%;
-    height: 450px;
-    display: block;
-}
-
-/* MEDIA QUERY para Contacto en Móvil */
+/* Media Queries para Contacto */
 @media (max-width: 900px) {
     .contact-info-grid {
-        grid-template-columns: 1fr; /* Pasa a una sola columna */
+        grid-template-columns: 1fr; 
     }
-    
     .contact-short-info {
-        grid-template-columns: 1fr; /* Apila los 3 ítems de WhatsApp/Ubicación */
+        grid-template-columns: 1fr; 
+    }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+    .contact-short-info {
+        grid-template-columns: 1fr 1fr; 
+    }
+    .location-item {
+        grid-column: span 2;
     }
 }
 
 
 /* -------------------------------------------
-    13. ESTILOS DEL PIE DE PÁGINA (FOOTER)
+    12. ESTILOS DEL PIE DE PÁGINA (FOOTER)
 ------------------------------------------- */
 .main-footer {
     background-color: var(--color-rojo-principal);
@@ -704,9 +555,4 @@ body {
     padding: 30px 20px;
     text-align: center;
     border-top: 5px solid var(--color-oro-acento);
-}
-
-.footer-content p {
-    margin: 5px 0;
-    font-size: 0.9em;
 }
