@@ -73,21 +73,26 @@
 
 
     /* -------------------------------------------
-            4. CABECERA (HEADER) Y MENÚ
-        ------------------------------------------- */
-        .main-header {
-            position: sticky;
-            top: 0;
-            z-index: 1000; 
-            background-color: var(--color-header);
-            padding: 10px 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: flex-end; 
-            align-items: center; 
-            flex-wrap: wrap; 
-        }
-        .logo-area { display: none; }
+    4. CABECERA (HEADER) Y MENÚ (VERSIÓN ESTABLE)
+------------------------------------------- */
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+    
+    background-color: var(--color-fondo-base); /* Gris Claro */
+    
+    padding: 10px 20px;
+    
+    box-shadow: none; 
+    border-bottom: 3px solid var(--color-oro-acento); 
+    
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+    flex-wrap: wrap; 
+}
+.logo-area { display: none; }
 
 
         /* -------------------------------------------
@@ -109,90 +114,126 @@
         }
 
 /* -------------------------------------------
-            6. MENÚ MÓVIL Y ESTILOS BASE
-        ------------------------------------------- */
-        .main-nav {
-            display: none; 
-            width: 100%; 
-            transition: all 0.3s ease-in-out;
-            order: 3; 
-        }
+    6. MENÚ MÓVIL Y ESTILOS BASE (VERSIÓN ESTABLE)
+------------------------------------------- */
 
-        .main-nav.active {
-            display: block;
-        }
+/* ESTILOS DEL BOTÓN DE HAMBURGUESA */
+.menu-toggle {
+    background: var(--color-rojo-principal); 
+    color: var(--color-oro-acento); 
+    border: 2px solid var(--color-oro-acento);
+    padding: 5px 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 5px; 
+}
 
-        .main-nav ul {
-            list-style: none;
-            padding: 10px 0;
-        }
+/* ESTRUCTURA BASE DEL MENÚ (CERRADO) */
+.main-nav {
+    display: none; /* Inicialmente oculto en móvil */
+    width: 100%; /* Ocupa todo el ancho */
+    background-color: #fff; /* Fondo del menú móvil es Blanco */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
 
-        .main-nav li a {
-            display: block;
-            padding: 10px 15px;
-            text-decoration: none;
-            color: var(--color-rojo-principal);
-            border-bottom: 1px solid #eee; 
-            transition: background-color 0.2s;
-        }
+/* ESTRUCTURA DEL MENÚ (ABIERTO) */
+.main-nav.active {
+    display: block; 
+    position: absolute; 
+    top: 60px; 
+    left: 0;
+    z-index: 999;
+}
 
-        .main-nav li:last-child a {
-            border-bottom: none;
-        }
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-        .main-nav li a:hover {
-            background-color: var(--color-oro-acento);
-            color: var(--color-rojo-principal);
-        }
+/* ESTILOS DE LOS ENLACES DEL MENÚ */
+.main-nav li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color-rojo-principal); /* Restaurado a Rojo */
+    border-bottom: 1px solid #eee; /* Línea divisoria gris claro */
+    transition: background-color 0.2s;
+}
+
+.main-nav li:last-child a {
+    border-bottom: none;
+}
+
+.main-nav li a:hover {
+    background-color: var(--color-oro-acento); 
+    color: var(--color-rojo-principal);
+}
 
 
     /* -------------------------------------------
-            7. MEDIA QUERY (DISEÑO DE ESCRITORIO - PC)
-        ------------------------------------------- */
-        @media (min-width: 900px) { 
-            
-            .main-header {
-                justify-content: center; 
-                padding: 0 40px; 
-            }
+    7. MEDIA QUERY (DISEÑO DE ESCRITORIO - PC) - RESTAURADO A ESTABLE
+------------------------------------------- */
+@media (min-width: 900px) { 
+                    
+    .main-header {
+        justify-content: center; 
+        padding: 0 40px; 
+    }
 
-            .menu-toggle {
-                display: none;
-            }
+    .menu-toggle {
+        display: none;
+    }
 
-            .main-nav {
-                display: block !important; 
-                width: auto;
-            }
-            
-            .main-nav ul {
-                display: flex; 
-                align-items: center;
-            }
+    .main-nav {
+        display: flex !important; 
+        width: auto;
+        padding: 0;
+        position: static; 
+        background-color: transparent; 
+        box-shadow: none;
+    }
+    
+    .main-nav ul {
+        display: flex; 
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
-            .main-nav li a {
-                border-bottom: none; 
-                padding: 10px 15px; 
-                margin: 10px 5px; 
-                border-radius: 5px; 
-                text-transform: uppercase;
-                font-weight: bold;
-                text-align: center;
-                
-                background-color: var(--color-rojo-principal); 
-                color: var(--color-oro-acento);
-                border: 2px solid var(--color-oro-acento);
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
-            }
+    .main-nav li {
+        margin: 0;
+    }
 
-            .main-nav li a:hover {
-                background-color: #880000;
-                color: var(--color-oro-acento); 
-                transform: translateY(-2px); 
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            }
-        }
+    /* ESTILOS DE BOTÓN EN ESCRITORIO (Versión Estable: Botón Rojo) */
+    .main-nav li a {
+        border-bottom: none; 
+        padding: 10px 15px; 
+        margin: 10px 5px; 
+        border-radius: 5px; 
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        
+        background-color: var(--color-rojo-principal); 
+        color: var(--color-oro-acento); 
+        border: 2px solid var(--color-oro-acento); 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    /* ESTILOS DE HOVER EN ESCRITORIO (Versión Estable: Botón Dorado) */
+    .main-nav li a:hover {
+        background-color: var(--color-oro-acento); 
+        color: var(--color-rojo-principal); 
+        transform: translateY(-2px); 
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+}
 
 
         /* -------------------------------------------
@@ -745,6 +786,7 @@
     });
 </script>
 </html>
+
 
 
 
