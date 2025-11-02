@@ -597,26 +597,30 @@ body {
 }
 
 /* -------------------------------------------
-    14. SOLUCIÓN FINAL PARA ALTURA EN MÓVILES
+    14. SOLUCIÓN FINAL PARA MÓVILES (ALTURA Y CENTRADO)
 ------------------------------------------- */
 @media (max-width: 900px) { /* Se aplica a móviles y tablets */
     .hero-section {
-        /* Fuerza la altura de la sección a 550 píxeles */
-        height: 550px !important; 
+        height: 550px !important; /* Altura fija para eliminar el borde negro */
         
-        /* Asegura que la imagen esté centrada */
-        background-position: center center !important; 
+        /* ¡ESTO ES CLAVE PARA CENTRAR EL TEXTO Y LOS BOTONES! */
+        display: flex !important; 
+        flex-direction: column !important; /* Apila el contenido verticalmente */
+        justify-content: center !important; /* Centra verticalmente el contenido */
+        align-items: center !important; /* Centra horizontalmente el contenido */
+        
+        background-position: center center !important; /* Asegura el centrado de la imagen */
         
         /* Ajusta el padding para que el contenido no se salga */
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding: 50px 20px !important; 
     }
 
-    /* Opcional: Esto reduce un poco el texto para que quepa en la altura fija */
+    /* Ajuste para que el texto sea más legible en la altura fija */
     .titulo-bienvenida {
-        font-size: 2rem !important; 
+        font-size: 2.2rem !important; 
     }
 }
+
 
 
 
