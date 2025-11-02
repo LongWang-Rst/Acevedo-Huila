@@ -597,29 +597,39 @@ body {
 }
 
 /* -------------------------------------------
-    14. SOLUCIÓN FINAL PARA MÓVILES (ALTURA Y CENTRADO)
+    14. SOLUCIÓN FINAL PARA MÓVILES (ALTURA Y CENTRADO ABSOLUTO)
 ------------------------------------------- */
-@media (max-width: 900px) { /* Se aplica a móviles y tablets */
+@media (max-width: 900px) { 
     .hero-section {
         height: 550px !important; /* Altura fija para eliminar el borde negro */
-        
-        /* ¡ESTO ES CLAVE PARA CENTRAR EL TEXTO Y LOS BOTONES! */
-        display: flex !important; 
-        flex-direction: column !important; /* Apila el contenido verticalmente */
-        justify-content: center !important; /* Centra verticalmente el contenido */
-        align-items: center !important; /* Centra horizontalmente el contenido */
-        
         background-position: center center !important; /* Asegura el centrado de la imagen */
-        
-        /* Ajusta el padding para que el contenido no se salga */
-        padding: 50px 20px !important; 
     }
 
-    /* Ajuste para que el texto sea más legible en la altura fija */
-    .titulo-bienvenida {
-        font-size: 2.2rem !important; 
+    /* CENTRADO FORZADO DEL CONTENIDO CON POSICIONAMIENTO ABSOLUTO */
+    .hero-section .hero-content {
+        position: absolute; /* Permite moverlo libremente dentro del Hero */
+        top: 50%; /* Lo mueve al 50% desde arriba */
+        left: 50%; /* Lo mueve al 50% desde la izquierda */
+        transform: translate(-50%, -50%); /* Lo ajusta para que el centro sea el punto de anclaje */
+        width: 90%; /* Asegura que no se desborde */
+    }
+    
+    /* Ajustes visuales para móvil */
+    .hero-section h1, .hero-section p {
+        text-align: center;
+    }
+    .hero-section .cta-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    .hero-section .cta-button {
+        width: 100%; 
+        max-width: 250px;
     }
 }
+
 
 
 
