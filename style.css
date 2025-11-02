@@ -601,19 +601,20 @@ body {
 ------------------------------------------- */
 @media (max-width: 900px) { /* Se aplica a móviles y tablets */
     .hero-section {
-        /* Aumentamos la altura mínima a 70% del viewport o un valor fijo en píxeles */
-        min-height: 70vh !important; /* El !important asegura que se aplique */
+        /* Fuerza la altura de la sección a 550 píxeles */
+        height: 550px !important; 
         
-        /* Ajustamos la posición del fondo para que se vea más centrado en el móvil */
-        background-position: center top !important; 
-
-        /* Opcional: ajusta el espacio interno para que el contenido no se salga */
-        padding-top: 50px;
-        padding-bottom: 50px;
+        /* Asegura que la imagen esté centrada */
+        background-position: center center !important; 
+        
+        /* Ajusta el padding para que el contenido no se salga */
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
 
+    /* Opcional: Esto reduce un poco el texto para que quepa en la altura fija */
     .titulo-bienvenida {
-        font-size: 2rem; /* Tamaño de letra más seguro en móviles */
+        font-size: 2rem !important; 
     }
 }
 
