@@ -9,10 +9,10 @@
     --color-header: #fff; 
     --color-negro-opaco: #222222; 
     
-    /* Agregué estos dos para los botones del Hero, asumiendo que ya los tenías */
-    --color-resaltado: #AA0000; /* Rojo para el primer botón */
-    --color-secundario: #FFD700; /* Oro para el segundo botón */
-    --color-texto-oscuro: #222222; /* Texto para el botón oro */
+    /* Variables para los botones del Hero */
+    --color-resaltado: #AA0000; /* Rojo para el primer botón (EXPLORA MENÚ) */
+    --color-secundario: #FFD700; /* Oro para el segundo botón (LLÁMANOS AHORA) */
+    --color-texto-oscuro: #222222; 
 }
 
 /* -------------------------------------------
@@ -190,29 +190,29 @@ body {
     padding: 80px 20px;
     text-align: center;
     color: var(--color-fondo);
-    min-height: 50vh; /* Altura estándar para PC */
+    min-height: 50vh; 
     position: relative;
     
     /* Fondo */
     background-color: #000;
     background-image: url('hero-fondo.jpg'); 
     background-size: cover;
-    background-position: center center; /* SOLUCIÓN: Centrado perfecto en PC y móvil */
-    background-attachment: scroll; /* SOLUCIÓN: Sin efecto Parallax */
+    background-position: center center; 
+    background-attachment: scroll; 
     background-repeat: no-repeat;
     
     /* Capa de Oscurecimiento */
     box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5); 
     
-    /* FLEXBOX para centrar el contenido EN PC si no funciona con text-align */
-    display: flex; /* Asegura que se pueda centrar el contenido */
+    /* FLEXBOX para centrar el contenido */
+    display: flex; 
     flex-direction: column;
-    justify-content: center; /* Centrado vertical */
-    align-items: center; /* Centrado horizontal */
+    justify-content: center; 
+    align-items: center; 
 }
 
 /* -------------------------------------------
-    9. ESTILOS DE BOTONES Y CONTENEDORES DEL HERO (CORREGIDO)
+    9. ESTILOS DE BOTONES Y CONTENEDORES DEL HERO (COLORES DE TEXTO Y BOTONES PC)
 ------------------------------------------- */
 /* Estilos generales de los botones */
 .cta-button {
@@ -224,9 +224,9 @@ body {
     font-weight: bold;
     transition: all 0.3s ease;
 
-    /* Estilos base que se perdieron */
-    color: var(--color-fondo) !important; /* Texto blanco forzado */
-    background-color: var(--color-resaltado) !important; /* Rojo forzado */
+    /* Estilos base: Aplica al botón 1 (EXPLORA MENÚ) */
+    color: var(--color-fondo) !important; 
+    background-color: var(--color-resaltado) !important; 
 }
 
 /* ESTILO VISITADO CORREGIDO: Esto anula el morado/azul */
@@ -236,24 +236,23 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #a00 !important; /* Rojo un poco más oscuro al pasar el ratón */
+    background-color: #a00 !important; 
     transform: translateY(-2px);
 }
 
+/* Estilo del segundo botón (LLÁMANOS AHORA) */
 .secondary-cta {
-    background-color: var(--color-oro-acento) !important; /* Oro forzado */
-    color: var(--color-negro-opaco) !important; /* Texto oscuro forzado */
+    background-color: var(--color-oro-acento) !important; 
+    color: var(--color-negro-opaco) !important; 
 }
 
 .secondary-cta:hover {
-    background-color: #e0b000 !important; /* Oro más oscuro */
+    background-color: #e0b000 !important; 
 }
 
-/* Centrado de los botones en PC (Usamos flexbox en el Hero, así que solo el margin) */
 .cta-container {
     margin-top: 30px; 
     margin-bottom: 20px;
-    /* QUITADO: text-align: center; para que Flexbox del Hero maneje el centrado */
 }
 
 /* Estilos para Títulos y Textos del Hero */
@@ -262,17 +261,19 @@ body {
     margin-bottom: 10px;
     line-height: 1.1;
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    color: var(--color-oro-acento) !important; /* Título en Amarillo */
 }
 .hero-section p {
     font-size: clamp(1rem, 3vw, 1.4rem);
     margin-bottom: 30px;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    color: var(--color-fondo) !important; /* Subtítulo en Blanco */
 }
 
 /* -------------------------------------------
     10. ESTILOS PARA SECCIONES DE CONTENIDO
 ------------------------------------------- */
-/* ... (El resto de las secciones de tu código, 10, 11, 12, 13, permanecen igual) ... */
+
 .content-section {
     max-width: 1200px;
     margin: 40px auto;
@@ -283,7 +284,7 @@ body {
     border: 1px solid #e0e0e0;
     text-align: center;
 }
-/* (Continuación de estilos de contenido...) */
+
 .content-section h2 {
     color: var(--color-rojo-principal);
     font-size: clamp(1.8em, 4vw, 2.2em);
@@ -292,6 +293,7 @@ body {
     display: inline-block;
     padding-bottom: 5px;
 }
+
 .intro-paragraph {
     font-size: 1.1em;
     color: var(--color-negro-opaco);
@@ -301,6 +303,8 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* Estilos de la Sección del Chef */
 .chef-section-container {
     display: flex;
     flex-wrap: wrap; 
@@ -312,6 +316,7 @@ body {
     margin: 0 auto 50px auto; 
     text-align: center;
 }
+
 .chef-photo {
     width: 100%;
     max-width: 300px; 
@@ -322,11 +327,13 @@ body {
     object-fit: cover;
     aspect-ratio: 1 / 1; 
 }
+
 .chef-info {
     flex: 1; 
     text-align: left;
     max-width: 500px;
 }
+
 @media (max-width: 900px) {
     .chef-section-container {
         flex-direction: column; 
@@ -338,6 +345,8 @@ body {
         text-align: center; 
     }
 }
+
+/* Diseño de Rejilla para las características */
 .feature-grid {
     display: flex;
     justify-content: space-around;
@@ -345,6 +354,7 @@ body {
     gap: 20px;
     margin-top: 30px;
 }
+
 .feature-item {
     flex: 1 1 250px; 
     padding: 20px;
@@ -353,6 +363,7 @@ body {
     background-color: var(--color-fondo-base); 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
+
 .feature-icon {
     font-size: 2.5em;
     color: var(--color-oro-acento);
@@ -362,13 +373,21 @@ body {
     padding: 15px;
     background-color: var(--color-rojo-principal);
 }
+
 .feature-item h3 {
     color: var(--color-rojo-principal);
     margin-bottom: 10px;
 }
+
 .feature-item p {
     color: #666;
 }
+
+
+/* -------------------------------------------
+    11. ESTILOS DE LA CARTA COMPLETA VISIBLE
+------------------------------------------- */
+
 .carta-images-full-container {
     display: flex;
     flex-direction: column; 
@@ -377,6 +396,7 @@ body {
     margin: 40px auto;
     max-width: 1000px; 
 }
+
 .full-carta-image {
     width: 100%;
     max-width: 600px; 
@@ -386,9 +406,11 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
 }
+
 .full-carta-image:hover {
     transform: scale(1.02);
 }
+
 @media (min-width: 1024px) {
     .carta-images-full-container {
         flex-direction: row; 
@@ -400,14 +422,21 @@ body {
         max-width: none;
     }
 }
+
 .view-full-menu-btn {
     margin: 20px auto 30px auto;
     display: block;
     max-width: 350px;
 }
+
+/* -------------------------------------------
+    12. ESTILOS DE GALERÍA Y TESTIMONIOS (Ajustes de espacio)
+------------------------------------------- */
+
 .gallery-section {
     padding-bottom: 60px;
 }
+
 .food-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
@@ -415,11 +444,13 @@ body {
     margin-top: 40px;
     margin-bottom: 40px;
 }
+
 @media (min-width: 1200px) {
     .food-gallery {
         grid-template-columns: repeat(5, 1fr);
     }
 }
+
 .gallery-item {
     overflow: hidden; 
     border-radius: 12px;
@@ -428,6 +459,7 @@ body {
     border: 3px solid var(--color-fondo-base); 
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
+
 .gallery-image {
     width: 100%;
     aspect-ratio: 1 / 1; 
@@ -435,6 +467,7 @@ body {
     object-fit: cover; 
     transition: transform 0.5s ease; 
 }
+
 .testimonial-grid {
     display: flex;
     flex-wrap: wrap;
@@ -442,6 +475,7 @@ body {
     justify-content: center;
     margin-top: 30px;
 }
+
 .testimonial-card {
     flex: 1 1 300px;
     background-color: var(--color-fondo-base);
@@ -452,6 +486,7 @@ body {
     border-left: 5px solid var(--color-oro-acento);
     text-align: left;
 }
+
 .testimonial-quote {
     font-size: 3em;
     color: var(--color-rojo-principal);
@@ -461,9 +496,15 @@ body {
     opacity: 0.7;
     line-height: 0.5;
 }
+
+
+/* -------------------------------------------
+    13. ESTILOS DE CONTACTO (Alineación corregida)
+------------------------------------------- */
 .contact-section {
     background-color: var(--color-fondo-base); 
 }
+
 .contact-info-grid {
     display: grid;
     grid-template-columns: 2fr 1fr; 
@@ -472,11 +513,13 @@ body {
     text-align: center;
     align-items: start; 
 }
+
 .contact-short-info {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
 }
+
 .contact-item {
     background-color: #fff;
     padding: 25px;
@@ -488,16 +531,19 @@ body {
     flex-direction: column;
     justify-content: center;
 }
+
 .contact-icon {
     font-size: 2.5em;
     color: var(--color-rojo-principal);
     margin-bottom: 15px;
 }
+
 .whatsapp-item a {
     color: var(--color-rojo-principal); 
     text-decoration: none;
     transition: color 0.3s;
 }
+
 .hours-item p {
     font-weight: normal;
     font-size: 1em;
@@ -506,10 +552,12 @@ body {
     border-bottom: 1px dotted #ccc;
     color: #444;
 }
+
 .hours-item .closed-day {
     color: var(--color-rojo-principal);
     font-weight: bold;
 }
+
 .map-container {
     margin-top: 40px;
     width: 100%;
@@ -518,6 +566,8 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* Media Queries para Contacto */
 @media (max-width: 900px) {
     .contact-info-grid {
         grid-template-columns: 1fr; 
@@ -534,6 +584,11 @@ body {
         grid-column: span 2;
     }
 }
+
+
+/* -------------------------------------------
+    14. SOLUCIÓN FINAL PARA CENTRADO, ALTURA Y COLORES EN MÓVILES
+------------------------------------------- */
 .main-footer {
     background-color: var(--color-rojo-principal);
     color: #fff;
@@ -541,64 +596,69 @@ body {
     text-align: center;
     border-top: 5px solid var(--color-oro-acento);
 }
+
 .footer-content p {
     margin: 5px 0;
     font-size: 0.9em;
 }
 
-
-/* -------------------------------------------
-    14. AJUSTES FINALES PARA MÓVILES (SOLUCIONA CENTRADO Y ALTURA)
-------------------------------------------- */
-@media (max-width: 900px) { 
+@media (max-width: 900px) { /* Se aplica a móviles y tablets */
     
-    /* 1. HERO SECTION (SOLUCIONA FONDO CORRIDO Y FALTA DE CENTRADO) */
     .hero-section {
-        min-height: 65vh !important; /* Altura aumentada para evitar el recorte negro */
+        min-height: 100vh !important; /* SOLUCIÓN: Fuerza el 100% de la altura de la ventana */
         
-        /* Centrado Flexbox Forzado */
+        /* Fija la imagen para evitar el recorte en el navegador móvil */
+        background-attachment: fixed !important; 
+        background-size: cover !important;
+        background-position: center center !important; 
+        
+        /* Forzamos el centrado */
         display: flex !important;
         flex-direction: column !important; 
-        justify-content: center !important; /* Centra el contenido verticalmente */
-        align-items: center !important; /* Centra el contenido horizontalmente */
+        justify-content: center !important; 
+        align-items: center !important; 
         
-        background-position: center center !important; 
-        padding-top: 40px !important; 
-        padding-bottom: 40px !important;
+        padding: 60px 20px !important; 
     }
 
-    /* 2. CONTENEDOR DE BOTONES (SOLUCIONA QUE SE VEAN A LA IZQUIERDA) */
+    /* Ajustes de texto */
+    .hero-section h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.1 !important;
+        color: var(--color-oro-acento) !important; /* Título en Amarillo */
+    }
+    .hero-section p {
+        font-size: 1rem !important;
+        color: var(--color-fondo) !important; /* Subtítulo en Blanco */
+    }
+    
+    /* Contenedor de botones (Apilado y centrado) */
     .cta-container {
         display: flex !important; 
-        flex-direction: column !important; /* Apila los botones */
-        align-items: center !important; /* Centra los botones apilados */
+        flex-direction: column !important; 
+        align-items: center !important; 
         width: 100% !important; 
-        margin-top: 20px !important;
+        margin-top: 30px !important;
     }
 
-    /* 3. BOTONES INDIVIDUALES (SOLUCIONA ESTILO MORADO Y CENTRADO) */
+    /* Botones individuales (Ancho y estilo) */
     .cta-button {
-        width: 90% !important; /* Ocupa el 90% del contenedor */
-        max-width: 300px !important; 
-        margin: 10px 0 !important; /* Margen solo arriba/abajo */
+        width: 95% !important; 
+        max-width: 350px !important; 
+        margin: 10px 0 !important; 
         text-align: center !important; 
-        
-        /* Forzar estilos para evitar el morado/azul de 'a:visited' */
+        padding: 15px 20px !important;
+
+        /* Primer botón (EXPLORA MENÚ): ROJO (Igual que en PC) */
+        background-color: var(--color-resaltado) !important;
         color: var(--color-fondo) !important; 
         text-decoration: none !important; 
-        background-color: var(--color-resaltado) !important;
     }
-
+    
+    /* SEGUNDO BOTÓN (LLÁMANOS AHORA): AMARILLO (Igual que en PC) */
     .secondary-cta {
         background-color: var(--color-oro-acento) !important; 
         color: var(--color-negro-opaco) !important; 
     }
-
-    /* 4. AJUSTES DE TEXTO */
-    .hero-section h1 {
-        font-size: 2.2rem !important;
-    }
-    .hero-section p {
-        font-size: 1rem !important;
-    }
 }
+
