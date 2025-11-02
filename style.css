@@ -596,6 +596,41 @@ body {
     font-size: 0.9em;
 }
 
+/* -------------------------------------------
+    14. AJUSTES FINOS PARA MÓVILES (ALTURA DEL HERO)
+------------------------------------------- */
+@media (max-width: 768px) { /* Se aplica a pantallas de 768px o menos (móviles y algunas tablets) */
+    .hero-section {
+        min-height: 60vh; /* Aumenta ligeramente la altura mínima para cubrir más espacio */
+        padding: 60px 20px; /* Reduce el padding para evitar que empuje demasiado el contenido */
+    }
+
+    /* Opcional: Ajustar el tamaño del texto para que no sea tan grande en pantallas pequeñas */
+    .titulo-bienvenida {
+        font-size: clamp(2rem, 8vw, 3.5rem); /* Títulos un poco más pequeños */
+    }
+
+    .subtitulo-hero {
+        font-size: clamp(0.9rem, 3.5vw, 1.3rem); /* Subtítulos más pequeños */
+        margin-bottom: 30px; /* Ajusta el espacio */
+    }
+
+    .cta-button {
+        padding: 12px 25px; /* Botones ligeramente más pequeños */
+        font-size: 1rem;
+    }
+}
+
+/* Para pantallas muy muy pequeñas (iPhone SE, etc.) podemos necesitar un ajuste extra */
+@media (max-width: 480px) {
+    .hero-section {
+        min-height: 70vh; /* Un poco más de altura mínima */
+        padding: 50px 15px; /* Más espacio */
+    }
+    .titulo-bienvenida {
+        font-size: clamp(1.8rem, 9vw, 3rem); 
+    }
+}
 
 
 
