@@ -246,7 +246,7 @@ body {
 .cta-container {
     display: flex;
     gap: 15px; 
-    justify-content: center;
+    justify-content: center center;
     flex-wrap: wrap; 
 }
 
@@ -621,6 +621,7 @@ body {
     margin: 5px 0;
     font-size: 0.9em;
 }
+
 
 
 
