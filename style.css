@@ -597,38 +597,23 @@ body {
 }
 
 /* -------------------------------------------
-    14. AJUSTES FINOS PARA MÓVILES (ALTURA DEL HERO)
+    14. SOLUCIÓN FINAL PARA ALTURA EN MÓVILES
 ------------------------------------------- */
-@media (max-width: 768px) { /* Se aplica a pantallas de 768px o menos (móviles y algunas tablets) */
+@media (max-width: 900px) { /* Se aplica a móviles y tablets */
     .hero-section {
-        min-height: 60vh; /* Aumenta ligeramente la altura mínima para cubrir más espacio */
-        padding: 60px 20px; /* Reduce el padding para evitar que empuje demasiado el contenido */
+        /* Aumentamos la altura mínima a 70% del viewport o un valor fijo en píxeles */
+        min-height: 70vh !important; /* El !important asegura que se aplique */
+        
+        /* Ajustamos la posición del fondo para que se vea más centrado en el móvil */
+        background-position: center top !important; 
+
+        /* Opcional: ajusta el espacio interno para que el contenido no se salga */
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
-    /* Opcional: Ajustar el tamaño del texto para que no sea tan grande en pantallas pequeñas */
     .titulo-bienvenida {
-        font-size: clamp(2rem, 8vw, 3.5rem); /* Títulos un poco más pequeños */
-    }
-
-    .subtitulo-hero {
-        font-size: clamp(0.9rem, 3.5vw, 1.3rem); /* Subtítulos más pequeños */
-        margin-bottom: 30px; /* Ajusta el espacio */
-    }
-
-    .cta-button {
-        padding: 12px 25px; /* Botones ligeramente más pequeños */
-        font-size: 1rem;
-    }
-}
-
-/* Para pantallas muy muy pequeñas (iPhone SE, etc.) podemos necesitar un ajuste extra */
-@media (max-width: 480px) {
-    .hero-section {
-        min-height: 70vh; /* Un poco más de altura mínima */
-        padding: 50px 15px; /* Más espacio */
-    }
-    .titulo-bienvenida {
-        font-size: clamp(1.8rem, 9vw, 3rem); 
+        font-size: 2rem; /* Tamaño de letra más seguro en móviles */
     }
 }
 
