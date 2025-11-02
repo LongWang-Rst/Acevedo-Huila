@@ -200,97 +200,6 @@ body {
 }
 
 /* -------------------------------------------
-    14. MEDIA QUERY PARA MÓVILES (AJUSTE DE ALTURA)
-------------------------------------------- */
-/* Este bloque debe ir al final de tu style.css */
-@media (max-width: 900px) { 
-    .hero-section {
-        min-height: 65vh !important; /* Aumenta esta altura para que no haya recorte negro */
-        padding-top: 50px !important; /* Ajusta el padding para que el contenido no se salga */
-        padding-bottom: 50px !important;
-    }
-    .titulo-bienvenida {
-        font-size: 2rem !important; /* Ajusta el tamaño del título */
-    }
-    .subtitulo-hero {
-        font-size: 1rem !important; /* Ajusta el tamaño del subtítulo */
-    }
-    .cta-container {
-        flex-direction: column !important; /* Apila los botones verticalmente en móvil */
-        gap: 10px !important;
-    }
-    .cta-button {
-        width: 100% !important;
-        max-width: 300px !important; /* Limita el ancho de los botones */
-    }
-}
-
-/* TÍTULOS DENTRO DEL HERO */
-.titulo-bienvenida {
-    color: var(--color-oro-acento);
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-.subtitulo-hero {
-    color: var(--color-fondo);
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
-    margin-bottom: 40px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* CONTENEDOR DE BOTONES (SOLUCION .cta-container) */
-.cta-container {
-    display: flex;
-    gap: 15px; 
-    justify-content: center center;
-    flex-wrap: wrap; 
-}
-
-/* ESTILOS DE BOTÓN PRINCIPAL (CTA) */
-.cta-button {
-    text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    
-    background-color: var(--color-rojo-principal);
-    color: var(--color-oro-acento);
-    border: 2px solid var(--color-oro-acento);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.cta-button:hover {
-    background-color: #880000;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-}
-
-/* Botón Secundario */
-.secondary-cta {
-    background-color: var(--color-oro-acento); 
-    color: var(--color-rojo-principal);
-    border: 2px solid var(--color-rojo-principal);
-}
-
-.secondary-cta:hover {
-    background-color: #EBD341;
-    color: var(--color-rojo-principal);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-}
-
-/* -------------------------------------------
     9. ESTILOS PARA SECCIONES DE CONTENIDO
 ------------------------------------------- */
 
@@ -622,6 +531,37 @@ body {
     font-size: 0.9em;
 }
 
+/* -------------------------------------------
+    14. SOLUCIÓN FINAL PARA CENTRADO Y ALTURA EN MÓVILES
+------------------------------------------- */
+@media (max-width: 900px) { /* Se aplica a móviles y tablets */
+    .hero-section {
+        min-height: 65vh !important; /* Mantiene la altura aumentada para evitar el borde negro */
+        
+        /* ¡FUERZA EL CENTRADO VERTICAL Y HORIZONTAL! */
+        display: flex !important;
+        flex-direction: column !important; 
+        justify-content: center !important; 
+        align-items: center !important; 
+        
+        background-position: center center !important; 
+        
+        padding-top: 50px !important; 
+        padding-bottom: 50px !important;
+    }
+
+    /* Ajustes específicos para que los botones se apilen y se centren */
+    .cta-container {
+        flex-direction: column !important; 
+        align-items: center !important; 
+    }
+    .cta-button {
+        width: 100% !important;
+        max-width: 300px !important; 
+        margin-left: 0 !important; 
+        margin-right: 0 !important;
+    }
+}
 
 
 
