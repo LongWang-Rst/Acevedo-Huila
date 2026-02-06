@@ -9,18 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Tipografías Personalizadas */
         h1, h2, h3, .brand-font { font-family: 'Cinzel', serif; }
         body { font-family: 'Lato', sans-serif; }
 
-        /* Animaciones */
         .fade-in-up { animation: fadeInUp 1s ease-out; }
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Clase CSS de respaldo para dorado */
         .text-gold-css { color: #D4AF37; }
         
         .btn-dragon {
@@ -34,8 +31,16 @@
             box-shadow: 0 10px 20px rgba(139, 0, 0, 0.4);
         }
         
-        /* Overlay del Modal */
         .modal-overlay { background-color: rgba(0, 0, 0, 0.9); }
+
+        /* ESTILO PARA OCULTAR LA BARRA DE DESPLAZAMIENTO DEL CARRUSEL */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
     </style>
     
     <script>
@@ -43,12 +48,11 @@
             theme: {
                 extend: {
                     colors: {
-                        // AQUÍ ESTABA EL ERROR: Agregamos 'gold' para que funcione el degradado
                         gold: '#D4AF37',
                         dragon: {
-                            red: '#8B0000',    /* Rojo oscuro imperial */
+                            red: '#8B0000',
                             lightRed: '#B22222',
-                            dark: '#0F0F0F',   /* Negro casi puro */
+                            dark: '#0F0F0F',
                             gray: '#1A1A1A'
                         }
                     }
@@ -66,7 +70,7 @@
             </button>
             <div class="text-center">
                 <i class="fas fa-dragon text-5xl text-gold mb-4"></i>
-                <h2 class="text-2xl font-bold mb-2 text-white">¿Antojo de comida china?</h2>
+                <h2 class="text-2xl font-bold mb-2 text-white">¿Antojo de Chino?</h2>
                 <p class="text-gray-300 mb-6">Pide hoy y recibe un descuento especial en tu primera orden mencionando este anuncio.</p>
                 <a href="https://wa.me/573223014871?text=Hola,%20vi%20la%20promo%20en%20la%20web" class="block w-full btn-dragon text-white font-bold py-3 rounded text-lg uppercase tracking-wider">
                     Pedir Ahora
@@ -109,13 +113,13 @@
         </div>
     </nav>
 
-    <header id="inicio" class="relative h-screen flex items-center justify-center">
+    <header id="inicio" class="relative h-screen flex flex-col justify-center">
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Fondo Comida China" class="w-full h-full object-cover opacity-30">
             <div class="absolute inset-0 bg-gradient-to-t from-dragon-dark via-dragon-dark/80 to-transparent"></div>
         </div>
 
-        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto fade-in-up">
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto fade-in-up pt-24 md:pt-0">
             <div class="mb-6 inline-block border-b-2 border-gold pb-2">
                 <span class="text-gold font-bold tracking-[0.3em] uppercase text-sm md:text-base">Acevedo, Huila</span>
             </div>
@@ -180,50 +184,76 @@
     </section>
 
     <section id="galeria" class="py-24 bg-dragon-dark">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
+        <div class="container mx-auto">
+            <div class="text-center mb-10 px-6">
                 <span class="text-gold uppercase tracking-widest text-sm font-bold">Experiencia Visual</span>
                 <h2 class="text-3xl md:text-4xl font-bold mt-2 text-white">Nuestros Platos <span class="text-dragon-lightRed">Imperiales</span></h2>
+                <p class="text-gray-500 text-sm mt-4 md:hidden"><i class="fas fa-arrows-alt-h mr-2"></i> Desliza para ver más</p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="group relative overflow-hidden rounded-lg aspect-square cursor-pointer">
-                    <img src="assets/img/plato1.jpg" alt="Plato" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <span class="text-gold border border-gold px-4 py-2 uppercase text-xs tracking-widest">Ver Menú</span>
+            <div class="flex overflow-x-auto gap-6 px-6 pb-8 snap-x snap-mandatory no-scrollbar">
+                
+                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-dragon-gray rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group">
+                    <img src="assets/img/plato1.jpg" alt="Plato" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white">Dim Sum</h3>
+                        <p class="text-gold text-xs uppercase tracking-wider">Entrada Clásica</p>
                     </div>
                 </div>
-                <div class="group relative overflow-hidden rounded-lg aspect-square cursor-pointer">
-                    <img src="assets/img/plato2.jpg" alt="Plato" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                        <span class="text-gold border border-gold px-4 py-2 uppercase text-xs tracking-widest">Ver Menú</span>
+
+                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-dragon-gray rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group">
+                    <img src="assets/img/plato2.jpg" alt="Plato" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white">Pato Pekín</h3>
+                        <p class="text-gold text-xs uppercase tracking-wider">Especialidad</p>
                     </div>
                 </div>
-                <div class="group relative overflow-hidden rounded-lg aspect-square cursor-pointer md:col-span-2 md:row-span-2">
-                    <img src="assets/img/plato3.jpg" alt="Plato Destacado" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-60 transition"></div>
-                    <div class="absolute bottom-6 left-6">
-                        <h3 class="text-2xl font-bold text-white">Especialidad de la Casa</h3>
-                        <p class="text-gold text-sm">Sabor Inigualable</p>
+
+                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-dragon-gray rounded-2xl overflow-hidden shadow-xl border border-gold relative group">
+                    <div class="absolute top-4 right-4 bg-gold text-black text-xs font-bold px-3 py-1 rounded-full z-10">FAVORITO</div>
+                    <img src="assets/img/plato3.jpg" alt="Plato" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white">Especial de la Casa</h3>
+                        <p class="text-gold text-xs uppercase tracking-wider">Sabor Único</p>
                     </div>
                 </div>
-                <div class="group relative overflow-hidden rounded-lg aspect-square cursor-pointer">
-                    <img src="assets/img/plato4.jpg" alt="Plato" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+
+                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-dragon-gray rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group">
+                    <img src="assets/img/plato4.jpg" alt="Plato" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white">Arroz Cantonés</h3>
+                        <p class="text-gold text-xs uppercase tracking-wider">Tradicional</p>
+                    </div>
                 </div>
-                <div class="group relative overflow-hidden rounded-lg aspect-square cursor-pointer">
-                    <img src="assets/img/plato5.jpg" alt="Plato" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+
+                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-dragon-gray rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group">
+                    <img src="assets/img/plato5.jpg" alt="Plato" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white">Noodles</h3>
+                        <p class="text-gold text-xs uppercase tracking-wider">Wok</p>
+                    </div>
                 </div>
-                 <div class="group relative overflow-hidden rounded-lg aspect-square cursor-pointer">
-                    <img src="assets/img/plato6.jpg" alt="Plato" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+
+                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-dragon-gray rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group">
+                    <img src="assets/img/plato6.jpg" alt="Plato" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white">Ternera Bambú</h3>
+                        <p class="text-gold text-xs uppercase tracking-wider">Salteado</p>
+                    </div>
                 </div>
-                 <div class="group relative overflow-hidden rounded-lg aspect-square cursor-pointer">
-                    <img src="assets/img/plato7.jpg" alt="Plato" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                 <div class="min-w-[85%] md:min-w-[350px] snap-center bg-dragon-gray rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group">
+                    <img src="assets/img/plato7.jpg" alt="Plato" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white">Mariscos</h3>
+                        <p class="text-gold text-xs uppercase tracking-wider">Picante</p>
+                    </div>
                 </div>
+
             </div>
             
-            <div class="text-center mt-12">
+            <div class="text-center mt-6">
                 <a href="#contacto" class="inline-block border border-white/20 hover:border-gold text-gray-400 hover:text-white px-8 py-3 rounded-full transition text-sm tracking-widest uppercase">
-                    Ver Carta Completa en PDF
+                    Ver Menú Completo
                 </a>
             </div>
         </div>
@@ -240,7 +270,7 @@
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 bg-dragon-red rounded-full flex items-center justify-center font-bold text-white">J</div>
                         <div>
-                            <p class="font-bold text-white text-sm">Michell O.</p>
+                            <p class="font-bold text-white text-sm">Jose O.</p>
                             <div class="text-gold text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         </div>
                     </div>
@@ -312,15 +342,15 @@
                         <a href="https://wa.me/573223014871" class="flex items-center gap-4 bg-green-600/10 border border-green-600/30 p-3 rounded hover:bg-green-600 hover:text-white transition group">
                             <i class="fab fa-whatsapp text-2xl text-green-500 group-hover:text-white"></i>
                             <div class="text-left">
-                                <span class="block text-xs uppercase opacity-70">Línea Principal 1</span>
+                                <span class="block text-xs uppercase opacity-70">Línea Principal</span>
                                 <span class="font-bold text-lg">322 301 4871</span>
                             </div>
                         </a>
                         <a href="https://wa.me/573102278426" class="flex items-center gap-4 bg-green-600/10 border border-green-600/30 p-3 rounded hover:bg-green-600 hover:text-white transition group">
                             <i class="fab fa-whatsapp text-2xl text-green-500 group-hover:text-white"></i>
                             <div class="text-left">
-                                <span class="block text-xs uppercase opacity-70">Línea Principal 2</span>
-                                <span class="font-bold text-lg">310 227 8426 </span>
+                                <span class="block text-xs uppercase opacity-70">Línea Principal</span>
+                                <span class="font-bold text-lg">310 227 8426</span>
                             </div>
                         </a>
                     </div>
