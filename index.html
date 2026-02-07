@@ -33,14 +33,9 @@
         
         .modal-overlay { background-color: rgba(0, 0, 0, 0.9); }
 
-        /* ESTILO PARA OCULTAR LA BARRA DE DESPLAZAMIENTO DEL CARRUSEL */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
-        }
+        /* Ocultar barra de scroll del carrusel */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
     
     <script>
@@ -70,7 +65,7 @@
             </button>
             <div class="text-center">
                 <i class="fas fa-dragon text-5xl text-gold mb-4"></i>
-                <h2 class="text-2xl font-bold mb-2 text-white">¿Antojo de Chino?</h2>
+                <h2 class="text-2xl font-bold mb-2 text-white">¿Antojo de comer ahora?</h2>
                 <p class="text-gray-300 mb-6">Pide hoy y recibe un descuento especial en tu primera orden mencionando este anuncio.</p>
                 <a href="https://wa.me/573223014871?text=Hola,%20vi%20la%20promo%20en%20la%20web" class="block w-full btn-dragon text-white font-bold py-3 rounded text-lg uppercase tracking-wider">
                     Pedir Ahora
@@ -193,59 +188,82 @@
 
             <div class="flex overflow-x-auto gap-6 px-6 pb-8 snap-x snap-mandatory no-scrollbar">
                 
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-dragon-gray rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group">
-                    <img src="assets/img/plato1.jpg" alt="Plato" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
-                        <h3 class="text-xl font-bold text-white">Dim Sum</h3>
-                        <p class="text-gold text-xs uppercase tracking-wider">Entrada Clásica</p>
-                    </div>
-                </div>
-
-                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-dragon-gray rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group">
-                    <img src="assets/img/plato2.jpg" alt="Plato" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
-                        <h3 class="text-xl font-bold text-white">Pato Pekín</h3>
-                        <p class="text-gold text-xs uppercase tracking-wider">Especialidad</p>
-                    </div>
-                </div>
-
                 <div class="min-w-[85%] md:min-w-[350px] snap-center bg-dragon-gray rounded-2xl overflow-hidden shadow-xl border border-gold relative group">
-                    <div class="absolute top-4 right-4 bg-gold text-black text-xs font-bold px-3 py-1 rounded-full z-10">FAVORITO</div>
-                    <img src="assets/img/plato3.jpg" alt="Plato" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
-                        <h3 class="text-xl font-bold text-white">Especial de la Casa</h3>
-                        <p class="text-gold text-xs uppercase tracking-wider">Sabor Único</p>
+                    <div class="absolute top-4 right-4 bg-gold text-black text-xs font-bold px-3 py-1 rounded-full z-10 shadow-lg animate-pulse">
+                        MÁS PEDIDO
+                    </div>
+                    <img src="assets/img/plato1.jpg" alt="Arroz Tai" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Arroz Tai</h3>
+                        <p class="text-gray-300 text-xs mb-4 line-clamp-2">Pollo, chorizo, costilla de cerdo</p>
+                        <a href="#menu" class="inline-block text-gold text-sm font-bold border border-gold px-4 py-2 rounded-full hover:bg-gold hover:text-black transition">
+                            Ver Opciones
+                        </a>
                     </div>
                 </div>
 
                 <div class="min-w-[85%] md:min-w-[350px] snap-center bg-dragon-gray rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group">
-                    <img src="assets/img/plato4.jpg" alt="Plato" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
-                        <h3 class="text-xl font-bold text-white">Arroz Cantonés</h3>
-                        <p class="text-gold text-xs uppercase tracking-wider">Tradicional</p>
+                    <img src="assets/img/plato2.jpg" alt="Espagueti Chino" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Espagueti Chino</h3>
+                        <p class="text-gray-300 text-xs mb-4 line-clamp-2">Pollo, cerdo, camarón y jamón</p>
+                        <a href="#menu" class="inline-block text-gray-400 text-sm font-bold border border-gray-500 px-4 py-2 rounded-full hover:border-gold hover:text-gold transition">
+                            Ver Opciones
+                        </a>
                     </div>
                 </div>
 
                 <div class="min-w-[85%] md:min-w-[350px] snap-center bg-dragon-gray rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group">
-                    <img src="assets/img/plato5.jpg" alt="Plato" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
-                        <h3 class="text-xl font-bold text-white">Noodles</h3>
-                        <p class="text-gold text-xs uppercase tracking-wider">Wok</p>
+                    <img src="assets/img/plato3.jpg" alt="Arroz Especial" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Arroz Especial Café</h3>
+                        <p class="text-gray-300 text-xs mb-4 line-clamp-2">Arroz especial con pollo, cerdo, camarón y jamón</p>
+                        <a href="#menu" class="inline-block text-gray-400 text-sm font-bold border border-gray-500 px-4 py-2 rounded-full hover:border-gold hover:text-gold transition">
+                            Ver Opciones
+                        </a>
                     </div>
                 </div>
 
                 <div class="min-w-[85%] md:min-w-[350px] snap-center bg-dragon-gray rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group">
-                    <img src="assets/img/plato6.jpg" alt="Plato" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
-                        <h3 class="text-xl font-bold text-white">Ternera Bambú</h3>
-                        <p class="text-gold text-xs uppercase tracking-wider">Salteado</p>
+                    <img src="assets/img/plato4.jpg" alt="Chop Suey" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Chop Suey</h3>
+                        <p class="text-gray-300 text-xs mb-4 line-clamp-2">Pollo, cerdo, camarón y vegetales</p>
+                        <a href="#menu" class="inline-block text-gray-400 text-sm font-bold border border-gray-500 px-4 py-2 rounded-full hover:border-gold hover:text-gold transition">
+                            Ver Opciones
+                        </a>
+                    </div>
+                </div>
+
+                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-dragon-gray rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group">
+                    <img src="assets/img/plato5.jpg" alt="Pollo Fricase" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Pollo Fricase</h3>
+                        <p class="text-gray-300 text-xs mb-4 line-clamp-2">Pollo pierna/pernil, verduras, caldo, crema de leche</p>
+                        <a href="#menu" class="inline-block text-gray-400 text-sm font-bold border border-gray-500 px-4 py-2 rounded-full hover:border-gold hover:text-gold transition">
+                            Ver Opciones
+                        </a>
+                    </div>
+                </div>
+
+                <div class="min-w-[85%] md:min-w-[350px] snap-center bg-dragon-gray rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group">
+                    <img src="assets/img/plato6.jpg" alt="Tortilla China" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Tortilla China</h3>
+                        <p class="text-gray-300 text-xs mb-4 line-clamp-2">Pollo, cerdo, camarón, jamón y papas</p>
+                        <a href="#menu" class="inline-block text-gray-400 text-sm font-bold border border-gray-500 px-4 py-2 rounded-full hover:border-gold hover:text-gold transition">
+                            Ver Opciones
+                        </a>
                     </div>
                 </div>
                  <div class="min-w-[85%] md:min-w-[350px] snap-center bg-dragon-gray rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group">
-                    <img src="assets/img/plato7.jpg" alt="Plato" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-6">
-                        <h3 class="text-xl font-bold text-white">Mariscos</h3>
-                        <p class="text-gold text-xs uppercase tracking-wider">Picante</p>
+                    <img src="assets/img/plato7.jpg" alt="Bandeja Personal" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Bandeja Personal</h3>
+                        <p class="text-gray-300 text-xs mb-4 line-clamp-2">Pollo frito, arroz, papa y ensalada</p>
+                        <a href="#menu" class="inline-block text-gray-400 text-sm font-bold border border-gray-500 px-4 py-2 rounded-full hover:border-gold hover:text-gold transition">
+                            Ver Opciones
+                        </a>
                     </div>
                 </div>
 
@@ -270,7 +288,7 @@
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 bg-dragon-red rounded-full flex items-center justify-center font-bold text-white">J</div>
                         <div>
-                            <p class="font-bold text-white text-sm">Jose O.</p>
+                            <p class="font-bold text-white text-sm">Michell O.</p>
                             <div class="text-gold text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         </div>
                     </div>
@@ -342,14 +360,14 @@
                         <a href="https://wa.me/573223014871" class="flex items-center gap-4 bg-green-600/10 border border-green-600/30 p-3 rounded hover:bg-green-600 hover:text-white transition group">
                             <i class="fab fa-whatsapp text-2xl text-green-500 group-hover:text-white"></i>
                             <div class="text-left">
-                                <span class="block text-xs uppercase opacity-70">Línea Principal</span>
+                                <span class="block text-xs uppercase opacity-70">Línea Principal #1</span>
                                 <span class="font-bold text-lg">322 301 4871</span>
                             </div>
                         </a>
                         <a href="https://wa.me/573102278426" class="flex items-center gap-4 bg-green-600/10 border border-green-600/30 p-3 rounded hover:bg-green-600 hover:text-white transition group">
                             <i class="fab fa-whatsapp text-2xl text-green-500 group-hover:text-white"></i>
                             <div class="text-left">
-                                <span class="block text-xs uppercase opacity-70">Línea Principal</span>
+                                <span class="block text-xs uppercase opacity-70">Línea Principal #2</span>
                                 <span class="font-bold text-lg">310 227 8426</span>
                             </div>
                         </a>
