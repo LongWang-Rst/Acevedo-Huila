@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Long Wang | Rey Dragón - Acevedo Huila</title>
+    
+    <meta name="description" content="El auténtico sabor de Asia Central en Acevedo, Huila. Platos preparados con tradición, Wok y los mejores ingredientes. ¡Pide a domicilio!">
+    <meta name="keywords" content="Restaurante Chino, Acevedo Huila, Comida China, Long Wang, Domicilios, Arroz Chino">
+    <meta name="author" content="Juan_Arias_Oficial">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Long Wang - Rey Dragón 🐉">
+    <meta property="og:description" content="¡El mejor sabor oriental de Acevedo! Mira nuestro menú y pide tu domicilio hoy mismo.">
+    <meta property="og:image" content="https://res.cloudinary.com/dlzexkbme/image/upload/v1763408031/logo-transparente_ryegkb.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -31,6 +41,16 @@
         /* Ocultar barra de scroll del carrusel */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* ANIMACIÓN DEL BOTÓN FLOTANTE */
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .whatsapp-float {
+            animation: pulse-green 2s infinite;
+        }
     </style>
     
     <script>
@@ -52,6 +72,10 @@
     </script>
 </head>
 <body class="bg-dragon-dark text-gray-200 overflow-x-hidden selection:bg-dragon-red selection:text-white">
+
+    <a href="https://wa.me/573223014871?text=Hola,%20quiero%20hacer%20un%20pedido%20del%20sitio%20web" class="fixed bottom-6 right-6 z-[100] bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-white text-3xl shadow-2xl whatsapp-float hover:scale-110 transition duration-300" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <div id="promoModal" class="fixed inset-0 z-[60] hidden flex items-center justify-center modal-overlay px-4">
         <div class="bg-dragon-gray border border-gold rounded-xl max-w-md w-full p-8 relative shadow-2xl transform scale-100 transition-transform" data-aos="zoom-in">
@@ -104,9 +128,8 @@
     </nav>
 
     <header id="inicio" class="relative h-screen flex flex-col justify-center">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Fondo Comida China" class="w-full h-full object-cover opacity-30">
-            <div class="absolute inset-0 bg-gradient-to-t from-dragon-dark via-dragon-dark/80 to-transparent"></div>
+        <div class="absolute inset-0 z-0 bg-fixed bg-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1512058564366-18510be2db19?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+            <div class="absolute inset-0 bg-gradient-to-t from-dragon-dark via-dragon-dark/80 to-dragon-dark/30"></div>
         </div>
 
         <div class="relative z-10 text-center px-4 max-w-5xl mx-auto pt-24 md:pt-0" data-aos="fade-up" data-aos-duration="1500">
@@ -114,17 +137,17 @@
                 <span class="text-gold font-bold tracking-[0.3em] uppercase text-sm md:text-base">Acevedo, Huila</span>
             </div>
             
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight drop-shadow-lg">
                 EL AUTÉNTICO SABOR DE<br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">ASIA CENTRAL</span>
             </h1>
             
-            <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light" data-aos="fade-up" data-aos-delay="200">
+            <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light drop-shadow-md" data-aos="fade-up" data-aos-delay="200">
                 Sabores milenarios preparados con la pasión y tradición de Hong Kong, directo a tu mesa.
             </p>
             
             <div class="flex flex-col md:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
-                <a href="#menu" class="px-8 py-4 border border-white/30 rounded text-white hover:bg-white hover:text-black transition uppercase tracking-widest text-sm font-bold">
+                <a href="#menu" class="px-8 py-4 border border-white/30 rounded text-white hover:bg-white hover:text-black transition uppercase tracking-widest text-sm font-bold backdrop-blur-sm">
                     Ver Carta
                 </a>
                 <a href="https://wa.me/573223014871" class="btn-dragon text-white px-8 py-4 rounded text-sm font-bold uppercase tracking-widest shadow-lg shadow-red-900/50 hover:shadow-red-900/80">
