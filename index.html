@@ -10,8 +10,6 @@
     <meta property="og:title" content="Restaurante Long Wang 🐉">
     <meta property="og:description" content="¡El mejor sabor oriental de Acevedo! 🥢 Mira nuestro menú y pide tu domicilio aquí.">
     <meta property="og:image" content="assets/img/plato1.jpg"> 
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -47,8 +45,19 @@
             70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
-        .whatsapp-float {
+        .whatsapp-pulse {
             animation: pulse-green 2s infinite;
+        }
+        
+        /* Animación para el menú de WhatsApp */
+        .wa-menu-enter {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        .wa-menu-enter-active {
+            transform: translateY(0);
+            opacity: 1;
+            transition: all 0.3s ease-out;
         }
     </style>
     
@@ -72,9 +81,25 @@
 </head>
 <body class="bg-dragon-dark text-gray-200 overflow-x-hidden selection:bg-dragon-red selection:text-white">
 
-    <a href="https://wa.me/573223014871?text=%C2%A1Hola%20Long%20Wang!%20%F0%9F%90%89%F0%9F%A4%A6%20Vengo%20de%20su%20sitio%20web%20y%20quiero%20hacer%20un%20pedido%20%F0%9F%9B%B5" class="fixed bottom-6 right-6 z-[100] bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-white text-3xl shadow-2xl whatsapp-float hover:scale-110 transition duration-300" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <div class="fixed bottom-6 right-6 z-[100] flex flex-col items-end gap-3">
+        
+        <div id="wa-menu" class="hidden flex-col gap-3 mb-2 transition-all duration-300 transform origin-bottom-right">
+            
+            <a href="https://wa.me/573223014871?text=Hola%20Long%20Wang%20%F0%9F%90%89%20Quiero%20hacer%20un%20pedido%20%F0%9F%A5%A2" target="_blank" class="flex items-center gap-3 bg-white text-gray-800 px-4 py-2 rounded-full shadow-xl hover:bg-gray-100 transition border-l-4 border-green-500">
+                <span class="text-sm font-bold">Línea Principal (322...)</span>
+                <i class="fab fa-whatsapp text-green-500 text-xl"></i>
+            </a>
+
+            <a href="https://wa.me/573102278426?text=Hola%20Long%20Wang%20%F0%9F%90%89%20Quiero%20hacer%20un%20pedido%20%F0%9F%A5%A2" target="_blank" class="flex items-center gap-3 bg-white text-gray-800 px-4 py-2 rounded-full shadow-xl hover:bg-gray-100 transition border-l-4 border-green-600">
+                <span class="text-sm font-bold">Línea Alterna (310...)</span>
+                <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+            </a>
+        </div>
+
+        <button onclick="toggleWaMenu()" class="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center text-white text-3xl shadow-2xl whatsapp-pulse hover:scale-110 transition duration-300 focus:outline-none">
+            <i id="wa-icon" class="fab fa-whatsapp"></i>
+        </button>
+    </div>
 
     <div id="promoModal" class="fixed inset-0 z-[60] hidden flex items-center justify-center modal-overlay px-4">
         <div class="bg-dragon-gray border border-gold rounded-xl max-w-md w-full p-8 relative shadow-2xl transform scale-100 transition-transform" data-aos="zoom-in">
@@ -85,9 +110,9 @@
                 <i class="fas fa-dragon text-5xl text-gold mb-4"></i>
                 <h2 class="text-2xl font-bold mb-2 text-white">¿con hambre?</h2>
                 <p class="text-gray-300 mb-6">Pide hoy y recibe un descuento especial en tu primera orden mencionando este anuncio.</p>
-                <a href="https://wa.me/573223014871?text=%C2%A1Hola!%20Vi%20la%20promo%20en%20la%20web%20y%20quiero%20pedir%20%F0%9F%98%8B" class="block w-full btn-dragon text-white font-bold py-3 rounded text-lg uppercase tracking-wider">
+                <button onclick="toggleWaMenu(); closeModal()" class="block w-full btn-dragon text-white font-bold py-3 rounded text-lg uppercase tracking-wider">
                     Pedir Ahora
-                </a>
+                </button>
             </div>
         </div>
     </div>
@@ -127,7 +152,7 @@
     </nav>
 
     <header id="inicio" class="relative h-screen flex flex-col justify-center">
-        <div class="absolute inset-0 z-0 bg-cover bg-center md:bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1512058564366-18510be2db19?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+        <div class="absolute inset-0 z-0 bg-cover bg-center bg-scroll md:bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1512058564366-18510be2db19?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
             <div class="absolute inset-0 bg-gradient-to-t from-dragon-dark via-dragon-dark/80 to-dragon-dark/30"></div>
         </div>
 
@@ -149,9 +174,9 @@
                 <a href="#menu" class="px-8 py-4 border border-white/30 rounded text-white hover:bg-white hover:text-black transition uppercase tracking-widest text-sm font-bold backdrop-blur-sm">
                     Ver Carta
                 </a>
-                <a href="https://wa.me/573223014871?text=%C2%A1Hola%20Long%20Wang!%20%F0%9F%90%89%F0%9F%A4%A6%20Vengo%20de%20su%20sitio%20web%20y%20quiero%20hacer%20un%20pedido%20%F0%9F%9B%B5" class="btn-dragon text-white px-8 py-4 rounded text-sm font-bold uppercase tracking-widest shadow-lg shadow-red-900/50 hover:shadow-red-900/80">
+                <button onclick="toggleWaMenu()" class="btn-dragon text-white px-8 py-4 rounded text-sm font-bold uppercase tracking-widest shadow-lg shadow-red-900/50 hover:shadow-red-900/80">
                     <i class="fab fa-whatsapp mr-2"></i> Domicilios
-                </a>
+                </button>
             </div>
         </div>
     </header>
@@ -379,20 +404,20 @@
                     <h4 class="text-gold font-bold uppercase tracking-widest mb-6 text-sm">Domicilios</h4>
                     <p class="text-gray-400 text-sm mb-4">Haz tu pedido ahora y disfruta:</p>
                     <div class="space-y-4">
-                        <a href="https://wa.me/573223014871?text=%C2%A1Hola%20Long%20Wang!%20%F0%9F%90%89%F0%9F%A4%A6%20Vengo%20de%20su%20sitio%20web%20y%20quiero%20hacer%20un%20pedido%20%F0%9F%9B%B5" class="flex items-center gap-4 bg-green-600/10 border border-green-600/30 p-3 rounded hover:bg-green-600 hover:text-white transition group">
+                        <button onclick="toggleWaMenu()" class="flex w-full items-center gap-4 bg-green-600/10 border border-green-600/30 p-3 rounded hover:bg-green-600 hover:text-white transition group text-left">
                             <i class="fab fa-whatsapp text-2xl text-green-500 group-hover:text-white"></i>
-                            <div class="text-left">
-                                <span class="block text-xs uppercase opacity-70">Línea Principal #1</span>
+                            <div>
+                                <span class="block text-xs uppercase opacity-70">Línea Principal</span>
                                 <span class="font-bold text-lg">322 301 4871</span>
                             </div>
-                        </a>
-                        <a href="https://wa.me/573102278426" class="flex items-center gap-4 bg-green-600/10 border border-green-600/30 p-3 rounded hover:bg-green-600 hover:text-white transition group">
+                        </button>
+                        <button onclick="toggleWaMenu()" class="flex w-full items-center gap-4 bg-green-600/10 border border-green-600/30 p-3 rounded hover:bg-green-600 hover:text-white transition group text-left">
                             <i class="fab fa-whatsapp text-2xl text-green-500 group-hover:text-white"></i>
-                            <div class="text-left">
-                                <span class="block text-xs uppercase opacity-70">Línea Principal #2</span>
+                            <div>
+                                <span class="block text-xs uppercase opacity-70">Línea Alterna</span>
                                 <span class="font-bold text-lg">310 227 8426</span>
                             </div>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -412,13 +437,13 @@
         // Iniciar Animaciones
         AOS.init();
 
-        // Lógica del Menú
+        // Lógica del Menú Móvil
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
         }
 
-        // Lógica del Pop-up
+        // Lógica del Pop-up Promocional
         setTimeout(function() {
             const modal = document.getElementById('promoModal');
             modal.classList.remove('hidden');
@@ -426,6 +451,26 @@
 
         function closeModal() {
             document.getElementById('promoModal').classList.add('hidden');
+        }
+
+        // LÓGICA DEL BOTÓN DOBLE DE WHATSAPP
+        function toggleWaMenu() {
+            const menu = document.getElementById('wa-menu');
+            const icon = document.getElementById('wa-icon');
+            
+            if (menu.classList.contains('hidden')) {
+                // Abrir menú
+                menu.classList.remove('hidden');
+                menu.classList.add('flex', 'wa-menu-enter', 'wa-menu-enter-active');
+                icon.classList.remove('fa-whatsapp');
+                icon.classList.add('fa-times'); // Cambia icono a X
+            } else {
+                // Cerrar menú
+                menu.classList.add('hidden');
+                menu.classList.remove('flex', 'wa-menu-enter', 'wa-menu-enter-active');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-whatsapp'); // Vuelve al icono de WhatsApp
+            }
         }
 
         // Smooth Scroll
