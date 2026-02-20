@@ -84,11 +84,11 @@
     <div class="fixed bottom-6 right-6 z-[100] flex flex-col items-end gap-3">
         <div id="wa-menu" class="hidden flex-col gap-3 mb-2 transition-all duration-300 transform origin-bottom-right">
             <a href="https://wa.me/573223014871?text=Hola%20Long%20Wang%20%F0%9F%90%89%20Quiero%20hacer%20un%20pedido%20%F0%9F%A5%A2" target="_blank" class="flex items-center gap-3 bg-white text-gray-800 px-4 py-2 rounded-full shadow-xl hover:bg-gray-100 transition border-l-4 border-green-500">
-                <span class="text-sm font-bold">Líneas Principales (322 301 4871)</span>
+                <span class="text-sm font-bold">Línea Principal (322 301 4871)</span>
                 <i class="fab fa-whatsapp text-green-500 text-xl"></i>
             </a>
-            <a href="https://wa.me/573102278426?text=Hola%20Long%20Wang%20%F0%9F%90%89%20Quiero%20hacer%20un%20pedido%20%F0%9F%A5%A2" target="_blank" class="flex items-center gap-3 bg-white text-gray-800 px-4 py-2 rounded-full shadow-xl hover:bg-gray-100 transition border-l-4 border-green-600">
-                <span class="text-sm font-bold">Líneas Principales (310 227 8426)</span>
+            <a href="https://wa.me/573102278426?text=Hola%20Long%20Wang%20%F0%90%89%20Quiero%20hacer%20un%20pedido%20%F0%9F%A5%A2" target="_blank" class="flex items-center gap-3 bg-white text-gray-800 px-4 py-2 rounded-full shadow-xl hover:bg-gray-100 transition border-l-4 border-green-600">
+                <span class="text-sm font-bold">Línea Alterna (310 227 8426)</span>
                 <i class="fab fa-whatsapp text-green-600 text-xl"></i>
             </a>
         </div>
@@ -98,16 +98,14 @@
     </div>
 
     <div id="promoModal" class="fixed inset-0 z-[60] hidden flex items-center justify-center modal-overlay px-4">
-        <div class="bg-dragon-gray border border-gold rounded-xl max-w-md w-full p-8 relative shadow-2xl transform scale-100 transition-transform" data-aos="zoom-in">
+        <div class="bg-dragon-gray border border-gold rounded-xl max-w-md w-full p-6 md:p-8 relative shadow-2xl transform scale-100 transition-transform" data-aos="zoom-in">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
                 <i class="fas fa-times text-xl"></i>
             </button>
             <div class="text-center">
-                
-                <img src="https://res.cloudinary.com/dlzexkbme/image/upload/v1771543279/6b4404de0bdb47507b124be90c11b81b-removebg-preview_lngklr.png" onerror="this.src='https://res.cloudinary.com/dlzexkbme/image/upload/v1763408031/logo-transparente_ryegkb.png'" alt="Dragón Imperial Dorado" class="h-32 md:h-40 object-contain mx-auto mb-2 drop-shadow-[0_5px_15px_rgba(212,175,55,0.4)] transition transform hover:scale-105">
-                
+                <img src="https://res.cloudinary.com/dlzexkbme/image/upload/v1771543279/6b4404de0bdb47507b124be90c11b81b-removebg-preview_lngklr.png" alt="Dragón Imperial Dorado" class="h-24 md:h-40 object-contain mx-auto mb-4 drop-shadow-[0_5px_15px_rgba(212,175,55,0.4)] transition transform hover:scale-105">
                 <h2 class="text-2xl font-bold mb-2 text-white">¿con hambre?</h2>
-                <p class="text-gray-300 mb-6">Pide hoy y recibe un descuento especial en tu primera orden mencionando este anuncio.</p>
+                <p class="text-gray-300 mb-6 text-sm md:text-base">Pide hoy y recibe un descuento especial en tu primera orden mencionando este anuncio.</p>
                 <button onclick="toggleWaMenu(); closeModal()" class="block w-full btn-dragon text-white font-bold py-3 rounded text-lg uppercase tracking-wider">
                     Pedir Ahora
                 </button>
@@ -179,15 +177,17 @@
         </div>
     </header>
 
-    <section id="chef" class="py-24 relative overflow-hidden bg-dragon-gray bg-no-repeat bg-right-top bg-[length:120%_auto] md:bg-[length:60%_auto]" 
-             style="background-image: url('https://res.cloudinary.com/dlzexkbme/image/upload/v1771543279/6b4404de0bdb47507b124be90c11b81b-removebg-preview_lngklr.png'); background-blend-mode: luminosity; opacity: 0.95;">
+    <section id="chef" class="py-24 bg-dragon-gray relative overflow-hidden">
         
-        <div class="absolute inset-0 bg-dragon-gray/90 z-0"></div>
+        <div class="hidden md:block absolute top-0 right-0 w-full h-full pointer-events-none z-0">
+            <div class="absolute inset-0 bg-no-repeat bg-[right_top] bg-[length:55%_auto] opacity-[0.10] grayscale" style="background-image: url('https://res.cloudinary.com/dlzexkbme/image/upload/v1771543279/6b4404de0bdb47507b124be90c11b81b-removebg-preview_lngklr.png');"></div>
+        </div>
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col md:flex-row items-center gap-12">
+                
                 <div class="w-full md:w-1/2" data-aos="fade-right" data-aos-duration="1000">
-                    <div class="md:relative rounded-lg border border-gold/30 overflow-hidden md:overflow-visible p-0 md:p-2">
+                    <div class="md:relative rounded-lg border border-gold/30 overflow-hidden md:overflow-visible p-0 md:p-2 bg-dragon-gray z-20">
                         <img src="assets/img/foto-chef.jpg" alt="Chef Anderson Arias" class="w-full rounded-t-lg md:rounded shadow-2xl transition duration-700 hover:scale-105">
                         
                         <div class="bg-dragon-red text-white p-4 text-center rounded-b-lg md:rounded-none md:absolute md:-bottom-6 md:-right-6 md:text-left md:p-6 md:shadow-xl">
@@ -197,26 +197,32 @@
                     </div>
                 </div>
                 
-                <div class="w-full md:w-1/2 text-center md:text-left" data-aos="fade-left" data-aos-duration="1000">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Nuestra <span class="text-gold">Tradición</span></h2>
-                    <p class="text-gray-400 mb-6 leading-relaxed">
-                        En Long Wang, fusionamos la tradición con la innovación. Con una visión única de la alta cocina china, el Chef Anderson garantiza que las técnicas y los sabores que pruebes sean tan auténticos como exclusivos.
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
-                        <div class="bg-black/40 p-4 rounded border-l-2 border-gold" data-aos="fade-up" data-aos-delay="100">
-                            <i class="fas fa-fire text-gold text-2xl mb-2"></i>
-                            <h4 class="font-bold text-white mb-1">Wok Tradicional</h4>
-                            <p class="text-xs text-gray-500">Altas temperaturas para sellar el sabor.</p>
-                        </div>
-                        <div class="bg-black/40 p-4 rounded border-l-2 border-gold" data-aos="fade-up" data-aos-delay="200">
-                            <i class="fas fa-leaf text-gold text-2xl mb-2"></i>
-                            <h4 class="font-bold text-white mb-1">Ingredientes Premium</h4>
-                            <p class="text-xs text-gray-500">Selección fresca diaria.</p>
-                        </div>
-                        <div class="bg-black/40 p-4 rounded border-l-2 border-gold" data-aos="fade-up" data-aos-delay="300">
-                            <i class="fas fa-motorcycle text-gold text-2xl mb-2"></i>
-                            <h4 class="font-bold text-white mb-1">Entrega Rápida</h4>
-                            <p class="text-xs text-gray-500">Disfruta de nuestros platos en casa en tiempo récord.</p>
+                <div class="w-full md:w-1/2 text-center md:text-left relative py-8 md:py-0" data-aos="fade-left" data-aos-duration="1000">
+                    
+                    <div class="md:hidden absolute inset-0 z-0 bg-no-repeat bg-center bg-cover opacity-[0.10] grayscale pointer-events-none" style="background-image: url('https://res.cloudinary.com/dlzexkbme/image/upload/v1771543279/6b4404de0bdb47507b124be90c11b81b-removebg-preview_lngklr.png');"></div>
+                    
+                    <div class="relative z-10">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Nuestra <span class="text-gold">Tradición</span></h2>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            En Long Wang, fusionamos la tradición con la innovación. Con una visión única de la alta cocina china, el Chef Anderson garantiza que las técnicas y los sabores que pruebes sean tan auténticos como exclusivos.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+                            <div class="bg-black/60 backdrop-blur-sm p-4 rounded border-l-2 border-gold" data-aos="fade-up" data-aos-delay="100">
+                                <i class="fas fa-fire text-gold text-2xl mb-2"></i>
+                                <h4 class="font-bold text-white mb-1">Wok Tradicional</h4>
+                                <p class="text-xs text-gray-500">Altas temperaturas para sellar el sabor.</p>
+                            </div>
+                            <div class="bg-black/60 backdrop-blur-sm p-4 rounded border-l-2 border-gold" data-aos="fade-up" data-aos-delay="200">
+                                <i class="fas fa-leaf text-gold text-2xl mb-2"></i>
+                                <h4 class="font-bold text-white mb-1">Ingredientes Premium</h4>
+                                <p class="text-xs text-gray-500">Selección fresca diaria.</p>
+                            </div>
+                            <div class="bg-black/60 backdrop-blur-sm p-4 rounded border-l-2 border-gold" data-aos="fade-up" data-aos-delay="300">
+                                <i class="fas fa-motorcycle text-gold text-2xl mb-2"></i>
+                                <h4 class="font-bold text-white mb-1">Entrega Rápida</h4>
+                                <p class="text-xs text-gray-500">Disfruta de nuestros platos en la comodidad de tu casa en tiempo récord.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -412,7 +418,7 @@
                         <button onclick="toggleWaMenu()" class="flex w-full items-center gap-4 bg-green-600/10 border border-green-600/30 p-3 rounded hover:bg-green-600 hover:text-white transition group text-left">
                             <i class="fab fa-whatsapp text-2xl text-green-500 group-hover:text-white"></i>
                             <div>
-                                <span class="block text-xs uppercase opacity-70">Línea Alternativa</span>
+                                <span class="block text-xs uppercase opacity-70">Líne Alterna</span>
                                 <span class="font-bold text-lg">310 227 8426</span>
                             </div>
                         </button>
