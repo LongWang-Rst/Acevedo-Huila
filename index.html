@@ -146,14 +146,12 @@
     <header id="inicio" class="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black pb-12 md:pb-0">
         
         <div id="header-bg" class="absolute inset-0 z-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-    <!-- Usamos la nueva clase que creamos en el CSS -->
-    <div class="absolute inset-0 fondo-hero-responsivo"></div>
+    <!-- Le añadimos h-full para que herede la altura del header -->
+    <div class="absolute inset-0 h-full w-full fondo-hero-responsivo"></div>
     
-    <!-- Capas de ajuste (Filtro y Viñeta) -->
     <div class="absolute inset-0 bg-black/20"></div>
     <div class="absolute inset-0 header-spotlight-overlay opacity-40"></div>
     
-    <!-- Partículas -->
     <div id="particles-js" class="absolute inset-0 z-10 pointer-events-none opacity-80"></div>
 </div>
 
