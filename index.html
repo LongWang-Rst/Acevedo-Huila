@@ -146,15 +146,18 @@
     <header id="inicio" class="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black pb-12 md:pb-0">
         
         <div id="header-bg" class="absolute inset-0 z-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-            <!-- AQUÍ ESTÁ EL CAMBIO: Quitamos bg-fixed y aseguramos bg-center -->
-            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('assets/img/hero-fondo.png');"></div>
-            
-            <div class="absolute inset-0 bg-black/10"></div>
-            <div class="absolute inset-0 header-spotlight-overlay opacity-50"></div>
-            
-            <!-- CHISPAS DE FUEGO -->
-            <div id="particles-js" class="absolute inset-0 z-10 pointer-events-none opacity-80"></div>
-        </div>
+    <!-- El truco es quitar el bg-fixed en móvil y usar background-attachment: scroll -->
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+         style="background-image: url('assets/img/hero-fondo.png'); background-attachment: scroll !important;">
+    </div>
+    
+    <!-- Capas de ajuste visual -->
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="absolute inset-0 header-spotlight-overlay opacity-40"></div>
+    
+    <!-- CHISPAS DE FUEGO -->
+    <div id="particles-js" class="absolute inset-0 z-10 pointer-events-none opacity-80"></div>
+</div>
 
         <!-- Añadimos pt-32 para que en móvil el contenido baje y no se corte con el logo -->
         <div id="header-content" class="relative z-10 text-center px-4 max-w-5xl mx-auto pt-32 md:pt-0 opacity-0 transform translate-y-10 transition-all duration-700 ease-in-out">
@@ -658,7 +661,7 @@
 <!-- BOTÓN DE LA GALLETA (Esquina Izquierda) -->
     <div class="fixed bottom-6 left-6 z-[100]">
         <!-- Cambia la clase del botón para que palpite -->
-<button onclick="abrirGalleta()" class="bg-[#D4AF37] w-14 h-14 rounded-full flex items-center justify-center text-black text-2xl shadow-2xl hover:scale-110 transition duration-300 border-2 border-black/20 click-pop whatsapp-pulse">
+<button onclick="abrirGalleta()" class="bg-[#D4AF37] w-14 h-14 rounded-full flex items-center justify-center text-black text-2xl shadow-2xl hover:scale-110 transition duration-300 border-2 border-black/20 click-pop cookie-pulse">
     <i class="fas fa-cookie"></i>
 </button>
     </div>
