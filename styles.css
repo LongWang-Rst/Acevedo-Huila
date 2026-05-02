@@ -92,3 +92,38 @@ body { font-family: 'Lato', sans-serif; overflow-y: hidden; }
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
+
+/* Bloqueo estricto de scroll horizontal */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Ajuste de Modales para Celular */
+@media (max-width: 768px) {
+    /* Hacemos que el contenido del modal no toque los bordes */
+    .modal-overlay {
+        padding: 1rem !important;
+    }
+    
+    #nequiModalContent, 
+    #galletaModalContent, 
+    #promoModalContent {
+        width: 95% !important;
+        max-width: 350px !important;
+        margin: auto;
+        padding: 1.5rem !important;
+    }
+
+    /* El visor de la carta (imagen del menú) */
+    #visorCartaModalContent {
+        width: 95% !important;
+        height: auto !important;
+        max-height: 80vh !important;
+    }
+    
+    #imagenVisor {
+        border-width: 4px !important; /* Bordes menos gruesos en móvil */
+    }
+}
