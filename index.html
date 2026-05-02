@@ -146,10 +146,13 @@
     <header id="inicio" class="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black pb-12 md:pb-0">
         
         <div id="header-bg" class="absolute inset-0 z-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-            <!-- Usamos bg-center en móvil para que no se pierda el farol -->
-            <div class="absolute inset-0 bg-cover bg-center md:bg-top md:bg-fixed" style="background-image: url('assets/img/hero-fondo.png');"></div>
-            <div class="absolute inset-0 bg-black/20"></div>
+            <!-- AQUÍ ESTÁ EL CAMBIO: Quitamos bg-fixed y aseguramos bg-center -->
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('assets/img/hero-fondo.png');"></div>
+            
+            <div class="absolute inset-0 bg-black/10"></div>
             <div class="absolute inset-0 header-spotlight-overlay opacity-50"></div>
+            
+            <!-- CHISPAS DE FUEGO -->
             <div id="particles-js" class="absolute inset-0 z-10 pointer-events-none opacity-80"></div>
         </div>
 
