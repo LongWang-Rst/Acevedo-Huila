@@ -21,12 +21,22 @@ document.addEventListener("DOMContentLoaded", function() {
     
     if (preloader) {
         setTimeout(function() {
+            // Ocultamos el preloader
             preloader.style.opacity = '0';
             preloader.style.visibility = 'hidden';
             body.style.overflowY = 'auto'; 
 
-            if(headerBg) headerBg.classList.remove('opacity-0');
-            if(headerContent) headerContent.classList.remove('opacity-0', 'translate-y-10');
+            // Activamos el fondo del header
+            if(headerBg) {
+                headerBg.classList.remove('opacity-0');
+                // FUERZA BRUTA PARA IPHONE: Aseguramos que la opacidad sea 1
+                headerBg.style.opacity = '1';
+            }
+            
+            // Activamos el contenido (letras y botones)
+            if(headerContent) {
+                headerContent.classList.remove('opacity-0', 'translate-y-10');
+            }
         }, 1500);
     }
 
