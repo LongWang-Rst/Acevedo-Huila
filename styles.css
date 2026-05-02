@@ -127,3 +127,14 @@ html, body {
         border-width: 4px !important; /* Bordes menos gruesos en móvil */
     }
 }
+
+/* Animación de pálpito dorada */
+.cookie-pulse {
+    animation: cookie-pulse 2s infinite;
+}
+
+@keyframes cookie-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
