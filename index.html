@@ -146,16 +146,14 @@
     <header id="inicio" class="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black pb-12 md:pb-0">
         
         <div id="header-bg" class="absolute inset-0 z-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-    <!-- El truco es quitar el bg-fixed en móvil y usar background-attachment: scroll -->
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" 
-         style="background-image: url('assets/img/hero-fondo.png'); background-attachment: scroll !important;">
-    </div>
+    <!-- Usamos la nueva clase que creamos en el CSS -->
+    <div class="absolute inset-0 fondo-hero-responsivo"></div>
     
-    <!-- Capas de ajuste visual -->
+    <!-- Capas de ajuste (Filtro y Viñeta) -->
     <div class="absolute inset-0 bg-black/20"></div>
     <div class="absolute inset-0 header-spotlight-overlay opacity-40"></div>
     
-    <!-- CHISPAS DE FUEGO -->
+    <!-- Partículas -->
     <div id="particles-js" class="absolute inset-0 z-10 pointer-events-none opacity-80"></div>
 </div>
 
