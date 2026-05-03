@@ -145,15 +145,17 @@
     <!-- Ajustamos el header para que no sea rígido en móvil -->
     <header id="inicio" class="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black pb-12 md:pb-0">
         
-        <div id="header-bg" class="absolute inset-0 z-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-    <!-- Le añadimos h-full para que herede la altura del header -->
-    <div class="absolute inset-0 h-full w-full fondo-hero-responsivo"></div>
-    
-    <div class="absolute inset-0 bg-black/20"></div>
-    <div class="absolute inset-0 header-spotlight-overlay opacity-40"></div>
-    
-    <div id="particles-js" class="absolute inset-0 z-10 pointer-events-none opacity-80"></div>
-</div>
+       <header id="inicio" class="relative h-screen min-h-[600px] flex flex-col justify-center overflow-hidden bg-black">
+    <div id="header-bg" class="absolute inset-0 z-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+        <!-- Esta es la capa que manda el fondo -->
+        <div class="absolute inset-0 fondo-hero-responsivo"></div>
+        
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="absolute inset-0 header-spotlight-overlay opacity-40"></div>
+        <div id="particles-js" class="absolute inset-0 z-10 pointer-events-none opacity-80"></div>
+    </div>
+    ...
+</header>
 
         <!-- Añadimos pt-32 para que en móvil el contenido baje y no se corte con el logo -->
         <div id="header-content" class="relative z-10 text-center px-4 max-w-5xl mx-auto pt-32 md:pt-0 opacity-0 transform translate-y-10 transition-all duration-700 ease-in-out">
