@@ -139,24 +139,48 @@ html, body {
     100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
 }
 
-/* PC: Mantenemos tu configuración original intacta */
+/* ============================================================
+   ARREGLO DEFINITIVO PARA EL FONDO DEL HERO
+   ============================================================ */
+
+/* BASE (PC) — se ve perfecto, no se toca */
 .fondo-hero-responsivo {
     background-image: url('assets/img/hero-fondo.png');
-    background-position: center top; /* Restaurado para PC */
+    background-position: center 0%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed; 
-    height: 100%;
-    width: 100%;
+    background-attachment: fixed;
 }
 
-/* MÓVIL: Ajuste quirúrgico solo para celulares */
 @media (max-width: 768px) {
+
+    /* Contenedor padre: aseguramos que tenga altura real en iOS */
+    #header-bg {
+        /* Safari a veces no hereda el min-height del padre en cadenas absolutas */
+        min-height: 100vh;
+        min-height: -webkit-fill-available; /* Valor correcto para iOS Safari */
+    }
+
     .fondo-hero-responsivo {
+        /* 1. Eliminar el fixed que rompe iOS */
         background-attachment: scroll !important;
-        /* Usamos min-height para que no se recorte si el contenido crece */
-        min-height: 100% !important;
-        background-position: 80% center !important; 
-        background-size: cover !important;
+
+        /* 2. Dar dimensiones explícitas — no depender solo de 'inset-0' */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        min-height: 100vh;
+        min-height: -webkit-fill-available; /* iOS Safari: altura real sin barra de navegador */
+
+        /* 3. Forzar nueva capa de composición → Safari pinta el fondo */
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+
+        /* 4. Posición del fondo: ligeramente a la derecha para que se
+              vean las linternas chinas en pantalla vertical */
+        background-position: 65% center;
     }
 }
