@@ -139,22 +139,24 @@ html, body {
     100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
 }
 
-/* ARREGLO MAESTRO PARA EL FONDO */
+/* PC: Mantenemos tu configuración original intacta */
 .fondo-hero-responsivo {
     background-image: url('assets/img/hero-fondo.png');
-    background-position: center center;
+    background-position: center top; /* Restaurado para PC */
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed; /* Para PC se ve genial */
+    background-attachment: fixed; 
+    height: 100%;
+    width: 100%;
 }
 
-/* Solo para celulares */
+/* MÓVIL: Ajuste quirúrgico solo para celulares */
 @media (max-width: 768px) {
     .fondo-hero-responsivo {
-        /* IMPORTANTE: Cambiamos 100% por 100vh para clavar la imagen al tamaño del celular */
         background-attachment: scroll !important;
-        height: 100vh !important; 
-        width: 100vw !important;
-        background-position: center top !important; /* Para que se vean mejor los faroles */
+        /* Usamos min-height para que no se recorte si el contenido crece */
+        min-height: 100% !important;
+        background-position: 80% center !important; 
+        background-size: cover !important;
     }
 }
