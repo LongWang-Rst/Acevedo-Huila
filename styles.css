@@ -181,7 +181,7 @@ html, body {
 
         /* 4. Posición del fondo: ligeramente a la derecha para que se
               vean las linternas chinas en pantalla vertical */
-        background-size: 160%; 
-        background-position: 85% 20%;
+        background-size: cover;
+        background-position: 92% 20%;
     }
 }
