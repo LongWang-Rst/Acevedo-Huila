@@ -68,7 +68,7 @@
                 <h2 class="text-2xl font-bold mb-2 text-white brand-font uppercase tracking-wider">Pago <span class="text-purple-400">Rápido</span></h2>
                 <p class="text-gray-400 text-sm mb-6">¡Escanea el código QR para pagar por Nequi!</p>
                 <div class="bg-white p-3 rounded-xl inline-block mb-4 shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-                    <img src="assets/img/qr-nequi-sara.jpeg" alt="QR Nequi Sara Contreras" class="w-32 h-32 md:w-40 md:h-40 object-contain">
+                    <img src="assets/img/qr-nequi-sara.JPEG" alt="QR Nequi Sara Contreras" class="w-32 h-32 md:w-40 md:h-40 object-contain">
                 </div>
                 
                 <div class="flex items-center justify-center gap-3 mb-1">
@@ -145,17 +145,17 @@
     <!-- Ajustamos el header para que no sea rígido en móvil -->
     <header id="inicio" class="relative min-h-screen flex flex-col justify-center overflow-hidden bg-black pb-12 md:pb-0">
         
-       <header id="inicio" class="relative h-screen min-h-[600px] flex flex-col justify-center overflow-hidden bg-black">
-    <div id="header-bg" class="absolute inset-0 z-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-        <!-- Esta es la capa que manda el fondo -->
-        <div class="absolute inset-0 fondo-hero-responsivo"></div>
-        
-        <div class="absolute inset-0 bg-black/20"></div>
-        <div class="absolute inset-0 header-spotlight-overlay opacity-40"></div>
-        <div id="particles-js" class="absolute inset-0 z-10 pointer-events-none opacity-80"></div>
-    </div>
-    ...
-</header>
+        <div id="header-bg" class="absolute inset-0 z-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+    <!-- Usamos la nueva clase que creamos en el CSS -->
+    <div class="absolute inset-0 fondo-hero-responsivo"></div>
+    
+    <!-- Capas de ajuste (Filtro y Viñeta) -->
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="absolute inset-0 header-spotlight-overlay opacity-40"></div>
+    
+    <!-- Partículas -->
+    <div id="particles-js" class="absolute inset-0 z-10 pointer-events-none opacity-80"></div>
+</div>
 
         <!-- Añadimos pt-32 para que en móvil el contenido baje y no se corte con el logo -->
         <div id="header-content" class="relative z-10 text-center px-4 max-w-5xl mx-auto pt-32 md:pt-0 opacity-0 transform translate-y-10 transition-all duration-700 ease-in-out">
