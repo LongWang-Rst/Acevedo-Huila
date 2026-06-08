@@ -118,11 +118,32 @@ function abrirNequi() {
 
 function abrirGalleta() {
     const fortunas = [
-        "El fuego ancestral del wok guía tu camino. Reclama tu destino con el código: DRAGON10",
-        "La sabiduría de la naturaleza recompensa al que sabe esperar. Tu paciencia trae un obsequio: ANCESTRAL26",
-        "El equilibrio perfecto entre el viento y la llama está en tu próximo plato. Usa: EQUILIBRIO"
+        "El fuego ancestral del wok guía tu camino hacia la abundancia. Reclama tu destino con el código: DRAGON10",
+        "La sabiduría de la tierra recompensa al que sabe esperar. Tu paciencia atrae prosperidad: ANCESTRAL26",
+        "El equilibrio perfecto entre el cosmos y la llama está en tu próximo plato. Usa: EQUILIBRIO",
+        "La verdadera riqueza nace de las raíces de la tierra. Hoy el universo te sonríe con abundancia.",
+        "Eres un imán para la prosperidad. Las fuerzas del cosmos se alinean a tu favor en este banquete.",
+        "El dragón no pide permiso, domina el cielo. Toma el control de tu destino y tu éxito será inevitable.",
+        "La abundancia fluye hacia ti como un río inagotable. Atrévete a pensar en grande, el límite no existe.",
+        "Cada grano de arroz representa una oportunidad multiplicada. Prepárate para recibir grandeza en tu vida.",
+        "Las leyes del cosmos dictan que hoy es un día de poder. Una sorpresa te aguarda si eres audaz.",
+        "No persigas la fortuna, conviértete en ella. La energía de tus ancestros te impulsa hacia la cima.",
+        "Tu mente es como el wok: moldea tu realidad con el fuego implacable de tu ambición.",
+        "El universo no conoce la escasez. Declara tu intención con fuerza y la tierra te entregará sus mejores frutos.",
+        "Un líder no espera que el destino lo llame; él mismo enciende la llama. Hoy es tu momento de brillar.",
+        "La armonía milenaria te trae claridad. Grandes y lucrativos negocios se acercan a tu puerta.",
+        "Aliméntate de la energía de la naturaleza. Estás a un paso de materializar el imperio que tienes en mente.",
+        "La fuerza del Dragón Imperial corre por tus acciones. Eres digno de toda la riqueza que el cosmos ofrece.",
+        "Tu visión es clara y tu camino está despejado. La prosperidad es la ley natural que rige tu vida.",
+        "Hoy la causalidad se inclina ante tu determinación. Reclama la grandeza que te pertenece por derecho ancestral.",
+        "El universo recompensa de forma masiva a los que actúan con decisión. Saborea el éxito que está a punto de llegar.",
+        "La conexión con las leyes de la tierra te otorga poder absoluto. El oro y la abundancia son solo el reflejo de tu energía interior."
     ];
+    
+    // Selecciona un mensaje al azar
     const fortunaAzar = fortunas[Math.floor(Math.random() * fortunas.length)];
+    
+    // Lo inyecta en el HTML y abre el modal
     document.getElementById('mensajeFortuna').innerText = fortunaAzar;
     abrirModal('galletaModal');
 }
